@@ -6,9 +6,8 @@ class Objet
 private:
 	int poids;
 public:
-	Objet(int p):poids(p){};
-	Objet():poids(1){};
-	int getPoids(){return poids;};
-
+	Objet(int p = 0);
+	int getPoids();
 };
+
 #endif /* OBJET_H_ */

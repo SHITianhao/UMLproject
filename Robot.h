@@ -7,20 +7,22 @@
 
 #ifndef ROBOT_H_
 #define ROBOT_H_
+
 #include "Position.h"
 #include "Plot.h"
 #include "Objet.h"
-#include "EtatRobot.h"
+//#include "EtatRobot.h"
+
+using namespace std;
 
 class Robot
 {
 private:
 	Position position;
-	Plot plot;
-	Objet objet;
-	EtatRobot etatRobot;
+	char direction;
+	//EtatRobot etatRobot;
 public:
-	Robot();
+	Robot(Position position = Position(0, 0), char direction = 'N');
 	void avancer(int x, int y);
 	void tourner();
 	void saisir(Objet o);
@@ -32,7 +34,5 @@ public:
 	void repartir();
 	void affichier();
 };
-
-
 
 #endif /* ROBOT_H_ */
