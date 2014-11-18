@@ -11,7 +11,7 @@
 #include "Position.h"
 #include "Plot.h"
 #include "Objet.h"
-//#include "EtatRobot.h"
+#include "EtatRobot.h"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ class Robot
 private:
 	Position position;
 	char direction;
-	//EtatRobot etatRobot;
+	EtatRobot etatRobot;
 public:
 	Robot(Position position = Position(0, 0), char direction = 'N');
 	void avancer(int x, int y);
