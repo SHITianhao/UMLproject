@@ -1,7 +1,10 @@
+#include <iostream>
+using namespace std;
 class EtatRobot
 {
 public:
 	EtatRobot();
+	class EtatRobot_Exception: public std::exception{};
 	EtatRobot avancer(int x, int y);
 	EtatRobot tourner();
 	EtatRobot saisir(Objet o);
