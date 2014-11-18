@@ -6,8 +6,8 @@ class Plot
 private:
 	int hauteur;
 public:
-	Plot():hauteur(0){};
-	int getHauteur(){return hauteur;};
+	Plot(int hauteur = 0);
+	int getHauteur();
 };
 
 #endif /* PLOT_H_ */
