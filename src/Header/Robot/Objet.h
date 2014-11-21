@@ -1,13 +1,12 @@
 #ifndef OBJET_H_
 #define OBJET_H_
 
-class Objet
-{
+class Objet {
 private:
-	int poids;
+    int poids;
 public:
-	Objet(int p = 0);
-	int getPoids();
+    Objet(int p = 0);
+    int getPoids();
 };
 
 #endif /* OBJET_H_ */

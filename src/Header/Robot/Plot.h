@@ -1,13 +1,12 @@
 #ifndef PLOT_H_
 #define PLOT_H_
 
-class Plot
-{
+class Plot {
 private:
-	int hauteur;
+    int hauteur;
 public:
-	Plot(int hauteur = 0);
-	int getHauteur();
+    Plot(int hauteur = 0);
+    int getHauteur();
 };
 
 #endif /* PLOT_H_ */

@@ -53,6 +53,6 @@ $(DIR_O)/EtatRobotEnRouteAVide.o : $(DIR_ETAT_H)/EtatRobotEnRouteAVide.h $(DIR_E
 
 
 clean :
-	-rm -f $(DIR_O)/*.o robot.exe
+	-rm -f $(DIR_O)/*.o $(ALL)
 
 
