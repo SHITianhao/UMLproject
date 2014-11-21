@@ -1,17 +1,58 @@
-CC=g++
-CFLAGS=-c -Wall
-LDFLAGS=
-SOURCES=Position.cpp Position.h main.cpp Plot.h Plot.cpp Objet.cpp Objet.h Robot.h Robot.cpp EtatRobot.h EtatRobot.cpp EtatRobotEnRoute.h EtatRobotEnRoute.cpp EtatRobotEnRouteAVide.h EtatRobotEnRouteAVide.cpp EtatRobotEnRouteAVideFacePlot.h EtatRobotEnRouteAVideFacePlot.cpp EtatRobotEnRouteEnCharge.h EtatRobotEnRouteEnCharge.cpp EtatRobotEnRouteEnChargeFacePlot.h EtatRobotEnRouteEnChargeFacePlot.cpp EtatRobotFige.h EtatRobotFige.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=launch
+CXX_FLAGS=-g -ansi -Woverloaded-virtual
+DIR_H=src/Header
+DIR_S=src/Source
+DIR_ROBOT_H=$(DIR_H)/Robot
+DIR_ROBOT_S=$(DIR_S)/Robot
+DIR_ETAT_H=$(DIR_H)/Etat
+DIR_ETAT_S=$(DIR_S)/Etat
+DIR_O=bin
+LINK_CXX = g++
 
-all: $(SOURCES) $(EXECUTABLE)
-	
-$(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+#-------------------------------------------------
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+ALL = robot
+
+$(ALL) : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o
+	$(LINK_CXX) -o $(ALL) $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o
+
+$(DIR_O)/main.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ROBOT_H)/Plot.h $(DIR_ROBOT_H)/Objet.h
+	$(LINK_CXX) -o $(DIR_O)/main.o -c $(DIR_S)/main.cpp $(CXX_FLAGS)
+
+$(DIR_O)/Robot.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ETAT_H)/EtatRobot.h $(DIR_ROBOT_H)/Position.h $(DIR_ROBOT_H)/Plot.h $(DIR_ROBOT_H)/Objet.h
+	$(LINK_CXX) -o $(DIR_O)/Robot.o -c $(DIR_ROBOT_S)/Robot.cpp $(CXX_FLAGS)
+
+$(DIR_O)/Position.o : $(DIR_ROBOT_H)/Position.h
+	$(LINK_CXX) -o $(DIR_O)/Position.o -c $(DIR_ROBOT_S)/Position.cpp $(CXX_FLAGS)
+
+$(DIR_O)/Plot.o : $(DIR_ROBOT_H)/Plot.h
+	$(LINK_CXX) -o $(DIR_O)/Plot.o -c $(DIR_ROBOT_S)/Plot.cpp $(CXX_FLAGS)
+
+$(DIR_O)/Objet.o : $(DIR_ROBOT_H)/Objet.h
+	$(LINK_CXX) -o $(DIR_O)/Objet.o -c $(DIR_ROBOT_S)/Objet.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobot.o : $(DIR_ETAT_H)/EtatRobot.h $(DIR_ROBOT_H)/Robot.h $(DIR_ROBOT_H)/Plot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobot.o -c $(DIR_ETAT_S)/EtatRobot.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobotFige.o : $(DIR_ETAT_H)/EtatRobotFige.h $(DIR_ETAT_H)/EtatRobot.h $(DIR_ETAT_H)/EtatRobotEnRoute.h $(DIR_ROBOT_H)/Robot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobotFige.o -c $(DIR_ETAT_S)/EtatRobotFige.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobotEnRoute.o : $(DIR_ETAT_H)/EtatRobotEnRoute.h $(DIR_ETAT_H)/EtatRobot.h $(DIR_ROBOT_H)/Robot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobotEnRoute.o -c $(DIR_ETAT_S)/EtatRobotEnRoute.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o : $(DIR_ETAT_H)/EtatRobotEnRouteEnChargeFacePlot.h $(DIR_ETAT_H)/EtatRobotEnRoute.h $(DIR_ROBOT_H)/Robot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o -c $(DIR_ETAT_S)/EtatRobotEnRouteEnChargeFacePlot.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobotEnRouteEnCharge.o : $(DIR_ETAT_H)/EtatRobotEnRouteEnCharge.h $(DIR_ETAT_H)/EtatRobotEnRoute.h $(DIR_ROBOT_H)/Robot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobotEnRouteEnCharge.o -c $(DIR_ETAT_S)/EtatRobotEnRouteEnCharge.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobotEnRouteAVideFacePlot.o : $(DIR_ETAT_H)/EtatRobotEnRouteAVideFacePlot.h $(DIR_ETAT_H)/EtatRobotEnRoute.h $(DIR_ROBOT_H)/Robot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o -c $(DIR_ETAT_S)/EtatRobotEnRouteAVideFacePlot.cpp $(CXX_FLAGS)
+
+$(DIR_O)/EtatRobotEnRouteAVide.o : $(DIR_ETAT_H)/EtatRobotEnRouteAVide.h $(DIR_ETAT_H)/EtatRobotEnRoute.h $(DIR_ROBOT_H)/Robot.h
+	$(LINK_CXX) -o $(DIR_O)/EtatRobotEnRouteAVide.o -c $(DIR_ETAT_S)/EtatRobotEnRouteAVide.cpp $(CXX_FLAGS)
+
 
 clean :
-	rm -f *.o a.out *.ps \
+	-rm -f $(DIR_O)/*.o robot.exe
+
+
