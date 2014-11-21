@@ -28,3 +28,6 @@ EtatRobot* EtatRobotEnRouteEnChargeFacePlot::tourner() {
 EtatRobot* EtatRobotEnRouteEnChargeFacePlot::peser() {
 	return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
+void EtatRobotEnRouteEnChargeFacePlot::afficher() {
+	cout<<"this is etat robot en route en charge face plot"<<endl;
+}

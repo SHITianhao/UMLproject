@@ -7,17 +7,19 @@ using namespace std;
 class EtatRobot
 {
 public:
-	EtatRobot(){}
+	EtatRobot(){};
+	virtual ~EtatRobot(){}
 	class EtatRobot_Exception: public std::exception{};
-	EtatRobot* avancer();
-	EtatRobot* tourner();
-	EtatRobot* saisir();
-	EtatRobot* poser();
-	EtatRobot* peser();
-	EtatRobot* rencontrerPlot();
-	EtatRobot* evaluerPlot();
-	EtatRobot* figer();
-	EtatRobot* repartir();
+	virtual EtatRobot* avancer();
+	virtual EtatRobot* tourner();
+	virtual EtatRobot* saisir();
+	virtual EtatRobot* poser();
+	virtual EtatRobot* peser();
+	virtual EtatRobot* rencontrerPlot();
+	virtual EtatRobot* evaluerPlot();
+	virtual EtatRobot* figer();
+	virtual EtatRobot* repartir();
+	virtual void afficher();
 };
 
 #endif /* ETATROBOTENROUTEAVIDE_H_ */

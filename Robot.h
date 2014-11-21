@@ -19,10 +19,12 @@ class Robot
 {
 private:
 	Position position;
+	Objet objet;
 	char direction;
 	static EtatRobot* ETAT_ROBOT;
 public:
 	Robot(Position position = Position(0, 0), char direction = 'N');
+	static EtatRobot* getEtat();
 	void avancer(int x, int y);
 	void tourner();
 	void saisir(Objet o);

@@ -26,4 +26,7 @@ EtatRobot* EtatRobotEnRouteAVideFacePlot::tourner() {
 EtatRobot* EtatRobotEnRouteAVideFacePlot::saisir() {
 	return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
+void EtatRobotEnRouteAVideFacePlot::afficher() {
+	cout<<"this is etat robot en route a vide face plot"<<endl;
+}
 

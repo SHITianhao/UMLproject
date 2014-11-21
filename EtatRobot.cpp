@@ -33,4 +33,7 @@ EtatRobot* EtatRobot::figer() {
 EtatRobot* EtatRobot::repartir() {
 	throw EtatRobot::EtatRobot_Exception();
 }
+void EtatRobot::afficher() {
+	cout<<"this is etat robot"<<endl;
+}
 

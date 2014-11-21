@@ -12,7 +12,9 @@
 class EtatRobotEnRoute: public EtatRobot {
 public:
 	EtatRobotEnRoute();
+	~EtatRobotEnRoute();
 	EtatRobot* figer();
+	void afficher();
 };
 
 #endif /* ETATROBOTENROUTE_H_ */

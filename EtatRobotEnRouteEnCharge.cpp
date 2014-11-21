@@ -27,3 +27,6 @@ EtatRobot* EtatRobotEnRouteEnCharge::peser() {
 EtatRobot* EtatRobotEnRouteEnCharge::rencontrerPlot() {
 	return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
+void EtatRobotEnRouteEnCharge::afficher(){
+	cout<<"this is etat robot en route en charge"<<endl;
+}

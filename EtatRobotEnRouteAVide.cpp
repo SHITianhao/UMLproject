@@ -23,3 +23,6 @@ EtatRobot* EtatRobotEnRouteAVide::tourner() {
 EtatRobot* EtatRobotEnRouteAVide::rencontrerPlot() {
 	return EtatRobotEnRouteAVideFacePlot::instance();
 }
+void EtatRobotEnRouteAVide::afficher() {
+	cout<<"this is etat robot en route a vide"<<endl;
+}

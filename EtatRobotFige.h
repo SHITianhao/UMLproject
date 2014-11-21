@@ -13,12 +13,12 @@ class EtatRobotFige: public EtatRobot {
 private:
 	static EtatRobotFige* ETAT_ROBOT_FIGE;
 protected:
-	EtatRobotFige() {
-	}
+	EtatRobotFige() {}
 public:
+	~EtatRobotFige(){}
 	static EtatRobotFige* instance();
-
 	EtatRobot* repartir();
+	void afficher();
 };
 
 #endif /* ETATROBOTFIGE_H_ */

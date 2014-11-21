@@ -16,10 +16,12 @@ protected:
 	EtatRobotEnRouteAVideFacePlot() {
 	}
 public:
+	~EtatRobotEnRouteAVideFacePlot(){}
 	static EtatRobotEnRouteAVideFacePlot* instance();
 	EtatRobot* evaluerPlot();
 	EtatRobot* tourner();
 	EtatRobot* saisir();
+	void afficher();
 
 };
 

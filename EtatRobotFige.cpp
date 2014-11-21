@@ -5,6 +5,7 @@
  *      Author: sth
  */
 #include "EtatRobotFige.h"
+#include "Robot.h"
 
 EtatRobotFige* EtatRobotFige::ETAT_ROBOT_FIGE = NULL;
 
@@ -15,6 +16,8 @@ EtatRobotFige* EtatRobotFige::instance() {
 }
 
 EtatRobot* EtatRobotFige::repartir() {
-	return NULL;
+	return Robot::getEtat();
 }
-
+void EtatRobotFige::afficher() {
+	cout<<"this is etat robot fige"<<endl;
+}

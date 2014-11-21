@@ -16,11 +16,13 @@ protected:
 	EtatRobotEnRouteEnCharge() {
 	}
 public:
+	~EtatRobotEnRouteEnCharge(){}
 	static EtatRobotEnRouteEnCharge* instance();
 	EtatRobot* avancer();
 	EtatRobot* tourner();
 	EtatRobot* peser();
 	EtatRobot* rencontrerPlot();
+	void afficher();
 };
 
 #endif /* ETATROBOTENROUTEENCHARGE_H_ */
