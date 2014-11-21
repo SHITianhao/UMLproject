@@ -20,7 +20,7 @@ class Robot
 private:
 	Position position;
 	char direction;
-	EtatRobot etatRobot;
+	static EtatRobot* ETAT_ROBOT;
 public:
 	Robot(Position position = Position(0, 0), char direction = 'N');
 	void avancer(int x, int y);

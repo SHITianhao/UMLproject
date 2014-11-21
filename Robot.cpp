@@ -1,13 +1,13 @@
 #include "Robot.h"
-#include "Position.h"
-#include "Objet.h"
-#include "Plot.h"
-#include "EtatRobot.h"
+
 
 using namespace std;
 
+EtatRobot* Robot::ETAT_ROBOT = NULL;
+
 Robot::Robot(Position position, char direction) : position(position), direction(direction) {
-	etatRobot = new EtatRobot();
+	if(NULL == ETAT_ROBOT )
+				ETAT_ROBOT = new EtatRobot();
 }
 
 void Robot::avancer(int x, int y) {

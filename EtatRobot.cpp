@@ -1,40 +1,36 @@
 /*
  * EtatRobot.cpp
  *
- *  Created on: Nov 13, 2014
+ *  Created on: Nov 21, 2014
  *      Author: sth
  */
 #include "EtatRobot.h"
 
-EtatRobot EtatRobot::avancer(int x, int y){
+EtatRobot* EtatRobot::avancer() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::tourner(){
+EtatRobot* EtatRobot::tourner() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::saisir(Objet o){
+EtatRobot* EtatRobot::saisir() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::poser(){
+EtatRobot* EtatRobot::poser() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::peser(){
+EtatRobot* EtatRobot::peser() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::rencontrerPlot(Plot p){
+EtatRobot* EtatRobot::rencontrerPlot() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::evaluerPlot(){
+EtatRobot* EtatRobot::evaluerPlot() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::figer(){
+EtatRobot* EtatRobot::figer() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-EtatRobot EtatRobot::repartir(){
+EtatRobot* EtatRobot::repartir() {
 	throw EtatRobot::EtatRobot_Exception();
 }
-
-
-
-
 
