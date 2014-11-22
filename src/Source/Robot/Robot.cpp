@@ -1,5 +1,5 @@
 #include "../../Header/Robot/Robot.h"
-#include "../../Header/Etat/EtatRobotEnRouteAVideFacePlot.h"
+#include "../../Header/Etat/EtatRobotEnRouteAVide.h"
 
 using namespace std;
 
@@ -11,8 +11,9 @@ EtatRobot* Robot::getEtat() {
 
 Robot::Robot(Position position, char direction) :
 position(position), direction(direction) {
-    if (NULL == ETAT_ROBOT)
-        ETAT_ROBOT = EtatRobotEnRouteAVideFacePlot::instance();
+    if (ETAT_ROBOT == NULL) {
+        ETAT_ROBOT = EtatRobotEnRouteAVide::instance();
+    }
 }
 
 void Robot::avancer(int x, int y) {
@@ -23,6 +24,8 @@ void Robot::avancer(int x, int y) {
     }
     position.setX(position.getX() + x);
     position.setY(position.getY() + y);
+    notifierObservateurs();
+
 }
 
 void Robot::tourner() {
@@ -43,24 +46,25 @@ void Robot::tourner() {
             direction = 'N';
             break;
     }
+    notifierObservateurs();
 }
 
-void Robot::saisir(Objet o) {
+void Robot::saisir(Objet* o) {
     if (ETAT_ROBOT->saisir() != NULL) {
         objet = o;
     }
+    notifierObservateurs();
 }
 
 void Robot::poser() {
-
 }
 
 int Robot::peser() {
     ETAT_ROBOT = ETAT_ROBOT->peser();
-    return objet.getPoids();
+    return objet->getPoids();
 }
 
-void Robot::rencontrerPlot(Plot p) {
+void Robot::rencontrerPlot() {
     ETAT_ROBOT = ETAT_ROBOT->rencontrerPlot();
 }
 
@@ -76,7 +80,18 @@ void Robot::repartir() {
 
 }
 
-void Robot::affichier() {
-    cout << "x:" << position.getX() << endl;
-    cout << "y:" << position.getY() << endl;
+Position Robot::getPosition() {
+    return position;
+}
+
+Plot* Robot::getPlot() {
+    return plot;
+}
+
+Objet* Robot::getObjet() {
+    return objet;
+}
+
+char Robot::getDirection() {
+    return direction;
 }

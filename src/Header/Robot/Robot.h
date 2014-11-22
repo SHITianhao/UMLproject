@@ -5,13 +5,15 @@
 #include "Plot.h"
 #include "Objet.h"
 #include "../Etat/EtatRobot.h"
+#include "../Affichage/Observable.h"
 
 using namespace std;
 
-class Robot {
+class Robot : public Observable {
 private:
     Position position;
-    Objet objet;
+    Objet* objet;
+    Plot* plot;
     char direction;
     static EtatRobot* ETAT_ROBOT;
 public:
@@ -19,14 +21,19 @@ public:
     static EtatRobot* getEtat();
     void avancer(int x, int y);
     void tourner();
-    void saisir(Objet o);
+    void saisir(Objet* o);
     void poser();
     int peser();
-    void rencontrerPlot(Plot p);
+    void rencontrerPlot();
     int evaluerPlot();
     void figer();
     void repartir();
-    void affichier();
+    
+    Position getPosition();
+    Plot* getPlot();
+    Objet* getObjet();
+    char getDirection();
+    
 };
 
 #endif /* ROBOT_H_ */

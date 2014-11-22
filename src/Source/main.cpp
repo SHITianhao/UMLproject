@@ -9,5 +9,5 @@ using namespace std;
 int main() {
     Robot robot(Position(10, 10));
     robot.tourner();
-    robot.affichier();
+    robot.avancer(15, 15);
 }
