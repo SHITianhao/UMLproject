@@ -5,9 +5,9 @@ class Objet {
 private:
     int poids;
 public:
-    Objet(int p = 0);
-    int getPoids();
-    void setPoids(int p);
+    Objet(int p = -1);
+    int getPoids() const;
+    void setPoids(const int& p);
 };
 
 #endif /* OBJET_H_ */

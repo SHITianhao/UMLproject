@@ -43,7 +43,7 @@ int EtatRobotEnRouteEnCharge::peser() {
     return robot->getObjet().getPoids();
 }
 
-void EtatRobotEnRouteEnCharge::rencontrerPlot(Plot p) {
+void EtatRobotEnRouteEnCharge::rencontrerPlot(const Plot& p) {
     robot->setEtat(EtatRobotEnRouteAVideFacePlot::instance(robot));
     robot->setPlot(p);
 }

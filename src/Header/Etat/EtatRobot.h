@@ -7,7 +7,7 @@
 
 class Robot;
 
-class EtatRobot : public Observable{
+class EtatRobot {
 protected:
     Robot* robot;
     EtatRobot(Robot* r);
@@ -17,10 +17,10 @@ public:
     virtual ~EtatRobot();
     virtual void avancer(int x, int y);
     virtual void tourner();
-    virtual void saisir(Objet o);
+    virtual void saisir(const Objet& o);
     virtual void poser();
     virtual int peser();
-    virtual void rencontrerPlot(Plot p);
+    virtual void rencontrerPlot(const Plot& p);
     virtual int evaluerPlot();
     virtual void figer();
     virtual void repartir();

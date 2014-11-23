@@ -11,17 +11,14 @@ class Observateur;
 class Observable
 {
     private :
-        std::vector<Observateur *> observateurs;
-
-    protected:
-        void maj();
-        void majException(std::string message);
+        Observateur* observateur;
 
     public:
         Observable();
         virtual ~Observable();
-        void attacher (Observateur* obs);
-        void detacher (Observateur* obs);
+        void maj(std::string commande);
+        void majException(std::string commande, std::string message);
+        void abonner (Observateur* obs);
 
 };
 

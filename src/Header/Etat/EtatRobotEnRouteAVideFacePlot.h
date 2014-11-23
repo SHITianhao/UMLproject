@@ -6,16 +6,16 @@
 class EtatRobotEnRouteAVideFacePlot : public EtatRobotEnRoute {
 private:
     static EtatRobotEnRouteAVideFacePlot* thisEtat;
-    
+
 protected:
     EtatRobotEnRouteAVideFacePlot(Robot* r);
-    
+
 public:
     ~EtatRobotEnRouteAVideFacePlot();
     static EtatRobotEnRouteAVideFacePlot* instance(Robot* r);
     int evaluerPlot();
     void tourner();
-    void saisir(Objet o);
+    void saisir(const Objet& o);
     std::string getEtatToString();
 };
 

@@ -38,7 +38,7 @@ void EtatRobotEnRouteAVide::tourner() {
     }
 }
 
-void EtatRobotEnRouteAVide::rencontrerPlot(Plot p) {
+void EtatRobotEnRouteAVide::rencontrerPlot(const Plot& p) {
     robot->setEtat(EtatRobotEnRouteAVideFacePlot::instance(robot));
     robot->setPlot(p);
 }

@@ -3,10 +3,10 @@
 Objet::Objet(int p) : poids(p) {
 }
 
-int Objet::getPoids() {
-    return Objet::poids;
+int Objet::getPoids() const {
+    return poids;
 }
 
-void Objet::setPoids(int p) {
+void Objet::setPoids(const int& p) {
     poids = p;
 }

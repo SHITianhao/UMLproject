@@ -26,23 +26,23 @@ public:
     class Commande_Impossible : public std::exception {};
     void avancer(int x, int y);
     void tourner();
-    void saisir(Objet o);
+    void saisir(const Objet& o);
     void poser();
     int peser();
-    void rencontrerPlot(Plot p);
+    void rencontrerPlot(const Plot& p);
     int evaluerPlot();
     void figer();
     void repartir();
 
     Position getPosition();
-    Plot getPlot();
-    Objet getObjet();
+    Plot getPlot() const;
+    Objet getObjet() const;
     char getDirection();
     EtatRobot* getEtat();
 
     void setPosition(int x, int y);
-    void setPlot(Plot p);
-    void setObjet(Objet o);
+    void setPlot(const Plot& p);
+    void setObjet(const Objet& o);
     void setDirection(char d);
     void setEtat(EtatRobot* e);
 };

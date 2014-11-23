@@ -3,10 +3,10 @@
 Plot::Plot(int h) : hauteur(h) {
 }
 
-int Plot::getHauteur() {
-    return Plot::hauteur;
+int Plot::getHauteur() const{
+    return hauteur;
 }
 
-void Plot::setHauteur(int h) {
+void Plot::setHauteur(const int& h) {
     hauteur = h;
 }

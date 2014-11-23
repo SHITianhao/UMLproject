@@ -16,7 +16,7 @@ public:
     void avancer(int x, int y);
     void tourner();
     int peser();
-    void rencontrerPlot(Plot p);
+    void rencontrerPlot(const Plot& p);
     std::string getEtatToString();
 };
 

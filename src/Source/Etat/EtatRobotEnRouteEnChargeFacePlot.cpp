@@ -19,11 +19,12 @@ EtatRobotEnRouteEnChargeFacePlot* EtatRobotEnRouteEnChargeFacePlot::instance(Rob
 
 void EtatRobotEnRouteEnChargeFacePlot::poser() {
     robot->setEtat(EtatRobotEnRouteAVideFacePlot::instance(robot));
-    robot->getObjet().setPoids(-1);
+    robot->setObjet(Objet());
 }
 
 void EtatRobotEnRouteEnChargeFacePlot::tourner() {
     robot->setEtat(EtatRobotEnRouteEnCharge::instance(robot));
+    robot->setPlot(Plot());
     switch(robot->getDirection()) {
         case 'E' :
             robot->setDirection('S');

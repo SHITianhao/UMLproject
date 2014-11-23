@@ -23,6 +23,7 @@ int EtatRobotEnRouteAVideFacePlot::evaluerPlot() {
 
 void EtatRobotEnRouteAVideFacePlot::tourner() {
     robot->setEtat(EtatRobotEnRouteEnCharge::instance(robot));
+    robot->setPlot(Plot());
     switch (robot->getDirection()) {
         case 'E':
             robot->setDirection('S');
@@ -41,7 +42,7 @@ void EtatRobotEnRouteAVideFacePlot::tourner() {
     }
 }
 
-void EtatRobotEnRouteAVideFacePlot::saisir(Objet o) {
+void EtatRobotEnRouteAVideFacePlot::saisir(const Objet& o) {
     robot->setEtat(EtatRobotEnRouteEnChargeFacePlot::instance(robot));
     robot->setObjet(o);
 }

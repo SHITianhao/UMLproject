@@ -15,7 +15,7 @@ public:
     static EtatRobotEnRouteAVide* instance(Robot* r);
     void avancer(int x, int y);
     void tourner();
-    void rencontrerPlot(Plot p);
+    void rencontrerPlot(const Plot& p);
     std::string getEtatToString();
 };
 
