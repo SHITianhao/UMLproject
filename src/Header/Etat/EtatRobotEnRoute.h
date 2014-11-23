@@ -4,8 +4,10 @@
 #include "EtatRobot.h"
 
 class EtatRobotEnRoute : public EtatRobot {
-public:
+protected:
     EtatRobotEnRoute(Robot* r);
+    
+public:
     ~EtatRobotEnRoute();
     void figer();
     void afficher();

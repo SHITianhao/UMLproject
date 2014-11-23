@@ -5,12 +5,14 @@
 
 class EtatRobotEnRouteEnCharge : public EtatRobotEnRoute {
 private:
-    EtatRobotEnRouteEnCharge* thisEtat;
+    static EtatRobotEnRouteEnCharge* thisEtat;
+    
 protected:
     EtatRobotEnRouteEnCharge(Robot* r);
+    
 public:
     ~EtatRobotEnRouteEnCharge();
-    EtatRobotEnRouteEnCharge* instance(Robot* r);
+    static EtatRobotEnRouteEnCharge* instance(Robot* r);
     void avancer(int x, int y);
     void tourner(char d);
     int peser();

@@ -2,6 +2,8 @@
 #include "../../Header/Etat/EtatRobotEnRouteEnCharge.h"
 #include "../../Header/Etat/EtatRobotEnRouteEnChargeFacePlot.h"
 
+EtatRobotEnRouteEnChargeFacePlot* EtatRobotEnRouteEnChargeFacePlot::thisEtat = NULL;
+
 EtatRobotEnRouteEnChargeFacePlot::EtatRobotEnRouteEnChargeFacePlot(Robot* r) : EtatRobotEnRoute(r) {
 }
 

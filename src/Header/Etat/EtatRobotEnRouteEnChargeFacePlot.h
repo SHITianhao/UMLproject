@@ -5,12 +5,14 @@
 
 class EtatRobotEnRouteEnChargeFacePlot : public EtatRobotEnRoute {
 private:
-    EtatRobotEnRouteEnChargeFacePlot* thisEtat;
+    static EtatRobotEnRouteEnChargeFacePlot* thisEtat;
+    
 protected:
     EtatRobotEnRouteEnChargeFacePlot(Robot* r);
+    
 public:
     ~EtatRobotEnRouteEnChargeFacePlot();
-    EtatRobotEnRouteEnChargeFacePlot* instance(Robot* r);
+    static EtatRobotEnRouteEnChargeFacePlot* instance(Robot* r);
     void poser();
     void tourner(char d);
     int peser();

@@ -5,12 +5,14 @@
 
 class EtatRobotEnRouteAVideFacePlot : public EtatRobotEnRoute {
 private:
-    EtatRobotEnRouteAVideFacePlot* thisEtat;
+    static EtatRobotEnRouteAVideFacePlot* thisEtat;
+    
 protected:
     EtatRobotEnRouteAVideFacePlot(Robot* r);
+    
 public:
     ~EtatRobotEnRouteAVideFacePlot();
-    EtatRobotEnRouteAVideFacePlot* instance(Robot* r);
+    static EtatRobotEnRouteAVideFacePlot* instance(Robot* r);
     int evaluerPlot();
     void tourner(char d);
     void saisir(Objet* o);

@@ -8,9 +8,9 @@ class Robot;
 class EtatRobot {
 protected:
     Robot* robot;
+    EtatRobot(Robot* r);
     
 public:
-    EtatRobot(Robot* r);
     virtual ~EtatRobot();
     virtual void avancer(int x, int y);
     virtual void tourner(char d);
