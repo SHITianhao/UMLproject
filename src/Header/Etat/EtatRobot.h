@@ -4,6 +4,8 @@
 #include <iostream>
 using namespace std;
 
+class Robot;
+
 class EtatRobot {
 public:
 
@@ -14,6 +16,7 @@ public:
     }
 
     class EtatRobot_Exception : public std::exception {
+    	virtual const char* what() const throw();
     };
     virtual EtatRobot* avancer();
     virtual EtatRobot* tourner();
@@ -22,8 +25,8 @@ public:
     virtual EtatRobot* peser();
     virtual EtatRobot* rencontrerPlot();
     virtual EtatRobot* evaluerPlot();
-    virtual EtatRobot* figer();
-    virtual EtatRobot* repartir();
+    virtual EtatRobot* figer(Robot* robot);
+    virtual EtatRobot* repartir(Robot* robot);
     virtual void afficher();
 };
 

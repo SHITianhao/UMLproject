@@ -7,10 +7,11 @@ EtatRobotEnRoute::EtatRobotEnRoute() {
 EtatRobotEnRoute::~EtatRobotEnRoute() {
 }
 
-EtatRobot* EtatRobotEnRoute::figer() {
+EtatRobot* EtatRobotEnRoute::figer(Robot* robot) {
+	EtatRobotFige::instance()->enregistrerRobotFige(robot);
     return EtatRobotFige::instance();
 }
 
 void EtatRobotEnRoute::afficher() {
-    cout << "this is etat robot en route" << endl;
+    cout << "Vous êtes dans état robot en route." << endl;
 }

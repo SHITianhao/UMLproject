@@ -3,22 +3,20 @@
 
 #include "EtatRobotEnRoute.h"
 
-class EtatRobotEnRouteAVideFacePlot : public EtatRobotEnRoute {
+class EtatRobotEnRouteAVideFacePlot: public EtatRobotEnRoute {
 private:
-    static EtatRobotEnRouteAVideFacePlot* ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+	static EtatRobotEnRouteAVideFacePlot* ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
 protected:
 
-    EtatRobotEnRouteAVideFacePlot() {
-    }
+	EtatRobotEnRouteAVideFacePlot();
 public:
 
-    ~EtatRobotEnRouteAVideFacePlot() {
-    }
-    static EtatRobotEnRouteAVideFacePlot* instance();
-    EtatRobot* evaluerPlot();
-    EtatRobot* tourner();
-    EtatRobot* saisir();
-    void afficher();
+	~EtatRobotEnRouteAVideFacePlot();
+	static EtatRobotEnRouteAVideFacePlot* instance();
+	EtatRobot* evaluerPlot();
+	EtatRobot* tourner();
+	EtatRobot* saisir();
+	void afficher();
 
 };
 
