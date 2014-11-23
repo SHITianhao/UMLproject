@@ -1,8 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
-
 #include "../../Header/Affichage/Observable.h"
 
 using namespace std;

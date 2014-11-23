@@ -1,26 +1,24 @@
-#ifndef ELEMENTREPRESENTABLE_H
-#define	ELEMENTREPRESENTABLE_H
+#ifndef OBSERVABLE_H_INCLUDED
+#define	OBSERVABLE_H_INCLUDED
 
 #include <iostream>
-#include <vector>
 
 #include "Observateur.h"
 
 class Observateur;
 
-class Observable
-{
-    private :
-        Observateur* observateur;
+class Observable {
+private:
+    Observateur* observateur;
 
-    public:
-        Observable();
-        virtual ~Observable();
-        void maj(std::string commande);
-        void majException(std::string commande, std::string message);
-        void abonner (Observateur* obs);
+public:
+    Observable();
+    virtual ~Observable();
+    void maj(std::string commande);
+    void majException(std::string commande, std::string message);
+    void abonner(Observateur* obs);
 
 };
 
-#endif	/* ELEMENTREPRESENTABLE_H */
+#endif
 

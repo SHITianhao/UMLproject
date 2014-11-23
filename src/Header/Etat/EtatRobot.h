@@ -1,9 +1,9 @@
-#ifndef ETAT_ROBOT_H_
-#define ETAT_ROBOT_H_
+#ifndef ETAT_ROBOT_H_INCLUDED
+#define ETAT_ROBOT_H_INCLUDED
+
+#include <iostream>
 
 #include "../Robot/Robot.h"
-#include "../Affichage/Observable.h"
-#include <iostream>
 
 class Robot;
 
@@ -11,9 +11,11 @@ class EtatRobot {
 protected:
     Robot* robot;
     EtatRobot(Robot* r);
-    
+
 public:
-    class EtatRobot_Exception : public std::exception {};
+
+    class Commande_Invalide : public std::exception {
+    };
     virtual ~EtatRobot();
     virtual void avancer(int x, int y);
     virtual void tourner();

@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "../../Header/Affichage/Observateur.h"
 #include "../../Header/Robot/Robot.h"
 

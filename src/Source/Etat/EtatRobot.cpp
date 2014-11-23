@@ -1,5 +1,4 @@
 #include "../../Header/Etat/EtatRobot.h"
-#include "../../Header/Affichage/Observable.h"
 
 EtatRobot::EtatRobot(Robot* r) : robot(r) {
 }
@@ -8,42 +7,42 @@ EtatRobot::~EtatRobot() {
 }
 
 void EtatRobot::avancer(int x, int y) {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 void EtatRobot::tourner() {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 void EtatRobot::saisir(const Objet& o) {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 void EtatRobot::poser() {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 int EtatRobot::peser() {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 void EtatRobot::rencontrerPlot(const Plot& p) {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 int EtatRobot::evaluerPlot() {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 void EtatRobot::figer() {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 void EtatRobot::repartir() {
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 
 std::string EtatRobot::getEtatToString() { 
-    throw EtatRobot_Exception();
+    throw Commande_Invalide();
 }
 

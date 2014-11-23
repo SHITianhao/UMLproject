@@ -1,5 +1,4 @@
 #include "../Header/Robot/Robot.h"
-#include "../Header/Affichage/Observateur.h"
 
 int main() {
     Robot robot;

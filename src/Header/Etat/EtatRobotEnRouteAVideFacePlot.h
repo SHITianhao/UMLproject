@@ -1,5 +1,5 @@
-#ifndef ETATROBOTENROUTEAVIDEFACEPLOT_H_
-#define ETATROBOTENROUTEAVIDEFACEPLOT_H_
+#ifndef ETAT_ROBOT_EN_ROUTE_A_VIDE_FACE_PLOT_H_INCLUDED
+#define ETAT_ROBOT_EN_ROUTE_A_VIDE_FACE_PLOT_H_INCLUDED
 
 #include "EtatRobotEnRoute.h"
 
@@ -19,4 +19,4 @@ public:
     std::string getEtatToString();
 };
 
-#endif /* ETATROBOTENROUTEAVIDEFACEPLOT_H_ */
+#endif

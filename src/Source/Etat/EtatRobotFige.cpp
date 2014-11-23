@@ -1,5 +1,4 @@
 #include "../../Header/Etat/EtatRobotFige.h"
-#include "../../Header/Robot/Robot.h"
 
 EtatRobotFige* EtatRobotFige::thisEtat = NULL;
 

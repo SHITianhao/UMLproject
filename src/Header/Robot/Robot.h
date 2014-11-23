@@ -1,15 +1,13 @@
-#ifndef ROBOT_H_
-#define ROBOT_H_
+#ifndef ROBOT_H_INCLUDED
+#define ROBOT_H_INCLUDED
+
+#include <iostream>
 
 #include "Position.h"
 #include "Plot.h"
 #include "Objet.h"
 #include "../Etat/EtatRobot.h"
 #include "../Affichage/Observable.h"
-
-#include <iostream>
-
-using namespace std;
 
 class EtatRobot;
 

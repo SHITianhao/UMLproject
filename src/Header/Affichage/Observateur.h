@@ -1,5 +1,5 @@
-#ifndef OBSERVATEURCONCRET_H
-#define	OBSERVATEURCONCRET_H
+#ifndef OBSERVATEUR_H_INCLUDED
+#define OBSERVATEUR_H_INCLUDED
 
 #include "Observable.h"
 
@@ -18,5 +18,5 @@ public:
     void afficherException(Observable* o, std::string commande, std::string message);
 };
 
-#endif	/* OBSERVATEURCONCRET_H */
+#endif
 

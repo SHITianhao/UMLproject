@@ -25,17 +25,17 @@ void EtatRobotEnRouteEnChargeFacePlot::poser() {
 void EtatRobotEnRouteEnChargeFacePlot::tourner() {
     robot->setEtat(EtatRobotEnRouteEnCharge::instance(robot));
     robot->setPlot(Plot());
-    switch(robot->getDirection()) {
-        case 'E' :
+    switch (robot->getDirection()) {
+        case 'E':
             robot->setDirection('S');
             break;
-        case 'S' :
+        case 'S':
             robot->setDirection('O');
             break;
-        case 'O' :
+        case 'O':
             robot->setDirection('N');
             break;
-        case 'N' :
+        case 'N':
             robot->setDirection('E');
             break;
         default:

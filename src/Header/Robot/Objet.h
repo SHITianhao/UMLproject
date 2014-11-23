@@ -1,5 +1,5 @@
-#ifndef OBJET_H_
-#define OBJET_H_
+#ifndef OBJET_H_INCLUDED
+#define OBJET_H_INCLUDED
 
 class Objet {
 private:
@@ -10,4 +10,4 @@ public:
     void setPoids(const int& p);
 };
 
-#endif /* OBJET_H_ */
+#endif
