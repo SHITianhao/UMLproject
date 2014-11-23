@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
-Robot::Robot(Position p, char d) :
-position(p), direction(d) {
+Robot::Robot(Position pos, Objet o, Plot pl, char d) :
+position(pos), objet(o), plot(pl), direction(d) {
     etat = EtatRobotEnRouteAVide::instance(this);
 }
 
@@ -14,12 +14,12 @@ void Robot::avancer(int x, int y) {
     notifierObservateurs();
 }
 
-void Robot::tourner(char d) {
-    etat->tourner(d);
+void Robot::tourner() {
+    etat->tourner();
     notifierObservateurs();
 }
 
-void Robot::saisir(Objet* o) {
+void Robot::saisir(Objet o) {
     etat->saisir(o);
     notifierObservateurs();
 }
@@ -30,15 +30,17 @@ void Robot::poser() {
 }
 
 int Robot::peser() {
+    notifierObservateurs();
     return etat->peser();
 }
 
-void Robot::rencontrerPlot(Plot* p) {
+void Robot::rencontrerPlot(Plot p) {
     etat->rencontrerPlot(p);
     notifierObservateurs();
 }
 
 int Robot::evaluerPlot() {
+    notifierObservateurs();
     return etat->evaluerPlot();
 }
 
@@ -60,11 +62,11 @@ Position Robot::getPosition() {
     return position;
 }
 
-Plot* Robot::getPlot() {
+Plot Robot::getPlot() {
     return plot;
 }
 
-Objet* Robot::getObjet() {
+Objet Robot::getObjet() {
     return objet;
 }
 
@@ -81,11 +83,11 @@ void Robot::setPosition(int x, int y) {
     position.setY(y);
 }
 
-void Robot::setPlot(Plot* p) {
+void Robot::setPlot(Plot p) {
     plot = p;
 }
 
-void Robot::setObjet(Objet* o) {
+void Robot::setObjet(Objet o) {
     objet = o;
 }
 

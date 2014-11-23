@@ -1,6 +1,6 @@
 #include "../../Header/Robot/Position.h"
 
-Position::Position(int x, int y) : x(x), y(y) {
+Position::Position(int newX, int newY) : x(newX), y(newY) {
 }
 
 int Position::getX() {

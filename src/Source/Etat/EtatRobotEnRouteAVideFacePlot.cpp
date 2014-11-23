@@ -1,6 +1,6 @@
-#include "../../Header/Etat/EtatRobotEnRouteAVide.h"
-#include "../../Header/Etat/EtatRobotEnRouteEnChargeFacePlot.h"
 #include "../../Header/Etat/EtatRobotEnRouteAVideFacePlot.h"
+#include "../../Header/Etat/EtatRobotEnRouteEnChargeFacePlot.h"
+#include "../../Header/Etat/EtatRobotEnRouteEnCharge.h"
 
 EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::thisEtat = NULL;
 
@@ -18,12 +18,35 @@ EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::instance(Robot* r)
 }
 
 int EtatRobotEnRouteAVideFacePlot::evaluerPlot() {
+    return robot->getPlot().getHauteur();
 }
 
-void EtatRobotEnRouteAVideFacePlot::tourner(char d) {
+void EtatRobotEnRouteAVideFacePlot::tourner() {
+    robot->setEtat(EtatRobotEnRouteEnCharge::instance(robot));
+    switch (robot->getDirection()) {
+        case 'E':
+            robot->setDirection('S');
+            break;
+        case 'S':
+            robot->setDirection('O');
+            break;
+        case 'O':
+            robot->setDirection('N');
+            break;
+        case 'N':
+            robot->setDirection('E');
+            break;
+        default:
+            break;
+    }
 }
 
-void EtatRobotEnRouteAVideFacePlot::saisir(Objet* o) {
+void EtatRobotEnRouteAVideFacePlot::saisir(Objet o) {
+    robot->setEtat(EtatRobotEnRouteEnChargeFacePlot::instance(robot));
+    robot->setObjet(o);
 }
 
+std::string EtatRobotEnRouteAVideFacePlot::getEtatToString() {
+    return "En route à vide et face à un plot";
+}
 

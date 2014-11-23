@@ -11,11 +11,11 @@ void EtatRobot::avancer(int x, int y) {
     //throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::tourner(char d) {
+void EtatRobot::tourner() {
     //throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::saisir(Objet* o) {
+void EtatRobot::saisir(Objet o) {
     //throw EtatRobot::EtatRobot_Exception();
 }
 
@@ -27,7 +27,7 @@ int EtatRobot::peser() {
     //throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::rencontrerPlot(Plot* p) {
+void EtatRobot::rencontrerPlot(Plot p) {
     //throw EtatRobot::EtatRobot_Exception();
 }
 
@@ -39,7 +39,11 @@ void EtatRobot::figer() {
     //throw EtatRobot::EtatRobot_Exception();
 }
 
-EtatRobot* EtatRobot::repartir() {
+void EtatRobot::repartir() {
     //throw EtatRobot::EtatRobot_Exception();
+}
+
+std::string EtatRobot::getEtatToString() {
+    
 }
 

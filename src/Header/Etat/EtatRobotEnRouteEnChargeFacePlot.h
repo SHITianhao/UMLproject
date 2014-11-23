@@ -14,8 +14,9 @@ public:
     ~EtatRobotEnRouteEnChargeFacePlot();
     static EtatRobotEnRouteEnChargeFacePlot* instance(Robot* r);
     void poser();
-    void tourner(char d);
+    void tourner();
     int peser();
+    std::string getEtatToString();
 };
 
 #endif /* ETATROBOTENROUTEENCHARGEFACEPLOT_H_ */

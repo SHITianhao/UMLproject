@@ -1,8 +1,12 @@
 #include "../../Header/Robot/Objet.h"
 
-Objet::Objet(int poids) : poids(poids) {
+Objet::Objet(int p) : poids(p) {
 }
 
 int Objet::getPoids() {
     return Objet::poids;
+}
+
+void Objet::setPoids(int p) {
+    poids = p;
 }

@@ -6,7 +6,7 @@ private:
     int x;
     int y;
 public:
-    Position(int x = 0, int y = 0);
+    Position(int newX = 0, int newY = 0);
     int getX();
     int getY();
     void setX(int x);

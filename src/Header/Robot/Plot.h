@@ -5,8 +5,9 @@ class Plot {
 private:
     int hauteur;
 public:
-    Plot(int hauteur = 0);
+    Plot(int h = -1);
     int getHauteur();
+    void setHauteur(int h);
 };
 
 #endif /* PLOT_H_ */

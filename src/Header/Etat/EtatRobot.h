@@ -2,6 +2,7 @@
 #define ETAT_ROBOT_H_
 
 #include "../Robot/Robot.h"
+#include <iostream>
 
 class Robot;
 
@@ -13,14 +14,15 @@ protected:
 public:
     virtual ~EtatRobot();
     virtual void avancer(int x, int y);
-    virtual void tourner(char d);
-    virtual void saisir(Objet* o);
+    virtual void tourner();
+    virtual void saisir(Objet o);
     virtual void poser();
     virtual int peser();
-    virtual void rencontrerPlot(Plot* p);
+    virtual void rencontrerPlot(Plot p);
     virtual int evaluerPlot();
     virtual void figer();
-    virtual EtatRobot* repartir();
+    virtual void repartir();
+    virtual std::string getEtatToString();
 };
 
 #endif

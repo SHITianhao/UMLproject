@@ -16,20 +16,33 @@ EtatRobotEnRouteAVide* EtatRobotEnRouteAVide::instance(Robot* r) {
 }
 
 void EtatRobotEnRouteAVide::avancer(int x, int y) {
-    try {
-        robot->setPosition(x, y);
-    } catch (exception e) {
+    robot->setPosition(x, y);
+}
 
+void EtatRobotEnRouteAVide::tourner() {
+    switch(robot->getDirection()) {
+        case 'E' :
+            robot->setDirection('S');
+            break;
+        case 'S' :
+            robot->setDirection('O');
+            break;
+        case 'O' :
+            robot->setDirection('N');
+            break;
+        case 'N' :
+            robot->setDirection('E');
+            break;
+        default:
+            break;
     }
 }
 
-void EtatRobotEnRouteAVide::tourner(char d) {
-    try {
-        robot->setDirection(d);
-    } catch (exception e) {
-
-    }
+void EtatRobotEnRouteAVide::rencontrerPlot(Plot p) {
+    robot->setEtat(EtatRobotEnRouteAVideFacePlot::instance(robot));
+    robot->setPlot(p);
 }
 
-void EtatRobotEnRouteAVide::rencontrerPlot(Plot* p) {
+std::string EtatRobotEnRouteAVide::getEtatToString() {
+    return "En route à vide";
 }

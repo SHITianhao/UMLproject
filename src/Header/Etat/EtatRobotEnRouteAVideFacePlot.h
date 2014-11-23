@@ -14,8 +14,9 @@ public:
     ~EtatRobotEnRouteAVideFacePlot();
     static EtatRobotEnRouteAVideFacePlot* instance(Robot* r);
     int evaluerPlot();
-    void tourner(char d);
-    void saisir(Objet* o);
+    void tourner();
+    void saisir(Objet o);
+    std::string getEtatToString();
 };
 
 #endif /* ETATROBOTENROUTEAVIDEFACEPLOT_H_ */

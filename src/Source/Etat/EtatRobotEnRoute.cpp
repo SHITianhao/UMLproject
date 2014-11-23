@@ -8,5 +8,5 @@ EtatRobotEnRoute::~EtatRobotEnRoute() {
 }
 
 void EtatRobotEnRoute::figer() {
-    
+    robot->setEtat(EtatRobotFige::instance(robot, robot->getEtat()));
 }

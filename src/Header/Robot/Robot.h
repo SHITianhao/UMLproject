@@ -16,33 +16,33 @@ class EtatRobot;
 class Robot : public Observable {
 private:
     Position position;
-    Objet* objet;
-    Plot* plot;
+    Objet objet;
+    Plot plot;
     char direction;
     EtatRobot* etat;
 
 public:
-    Robot(Position p = Position(0, 0), char d = 'N');
+    Robot(Position pos = Position(0, 0), Objet o = Objet(-1), Plot pl = Plot(-1), char d = 'E');
     void avancer(int x, int y);
-    void tourner(char d);
-    void saisir(Objet* o);
+    void tourner();
+    void saisir(Objet o);
     void poser();
     int peser();
-    void rencontrerPlot(Plot* p);
+    void rencontrerPlot(Plot p);
     int evaluerPlot();
     void figer();
     void repartir();
 
     Position getPosition();
-    Plot* getPlot();
-    Objet* getObjet();
+    Plot getPlot();
+    Objet getObjet();
     char getDirection();
     EtatRobot* getEtat();
 
     void setPosition(int x, int y);
-    void setPlot(Plot* plot);
-    void setObjet(Objet* objet);
-    void setDirection(char direction);
+    void setPlot(Plot p);
+    void setObjet(Objet o);
+    void setDirection(char d);
     void setEtat(EtatRobot* e);
 };
 

@@ -14,8 +14,8 @@ LINK_CXX = g++
 
 ALL = robot
 
-$(ALL) : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o $(DIR_O)/Observable.o $(DIR_O)/Observateur.o $(DIR_O)/ObservateurConcret.o
-	$(LINK_CXX) -o $(ALL) $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o $(DIR_O)/Observable.o $(DIR_O)/Observateur.o $(DIR_O)/ObservateurConcret.o
+robot : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o $(DIR_O)/Observable.o $(DIR_O)/Observateur.o $(DIR_O)/ObservateurConcret.o
+	$(LINK_CXX) -o robot $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o $(DIR_O)/Observable.o $(DIR_O)/Observateur.o $(DIR_O)/ObservateurConcret.o
 
 $(DIR_O)/main.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ROBOT_H)/Plot.h $(DIR_ROBOT_H)/Objet.h
 	$(LINK_CXX) -o $(DIR_O)/main.o -c $(DIR_S)/main.cpp $(CXX_FLAGS)

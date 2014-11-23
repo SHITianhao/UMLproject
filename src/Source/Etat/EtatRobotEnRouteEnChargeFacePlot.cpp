@@ -18,14 +18,34 @@ EtatRobotEnRouteEnChargeFacePlot* EtatRobotEnRouteEnChargeFacePlot::instance(Rob
 }
 
 void EtatRobotEnRouteEnChargeFacePlot::poser() {
-    
+    robot->setEtat(EtatRobotEnRouteAVideFacePlot::instance(robot));
+    robot->getObjet().setPoids(-1);
 }
 
-void EtatRobotEnRouteEnChargeFacePlot::tourner(char d) {
-    
+void EtatRobotEnRouteEnChargeFacePlot::tourner() {
+    robot->setEtat(EtatRobotEnRouteEnCharge::instance(robot));
+    switch(robot->getDirection()) {
+        case 'E' :
+            robot->setDirection('S');
+            break;
+        case 'S' :
+            robot->setDirection('O');
+            break;
+        case 'O' :
+            robot->setDirection('N');
+            break;
+        case 'N' :
+            robot->setDirection('E');
+            break;
+        default:
+            break;
+    }
 }
 
 int EtatRobotEnRouteEnChargeFacePlot::peser() {
-    
+    return robot->getObjet().getPoids();
 }
 
+std::string EtatRobotEnRouteEnChargeFacePlot::getEtatToString() {
+    return "En route en charge et face à un plot";
+}

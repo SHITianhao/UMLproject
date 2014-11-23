@@ -14,8 +14,9 @@ public:
     ~EtatRobotEnRouteAVide();
     static EtatRobotEnRouteAVide* instance(Robot* r);
     void avancer(int x, int y);
-    void tourner(char d);
-    void rencontrerPlot(Plot* p);
+    void tourner();
+    void rencontrerPlot(Plot p);
+    std::string getEtatToString();
 };
 
 #endif /* ETATROBOTENROUTEAVIDE_H_ */

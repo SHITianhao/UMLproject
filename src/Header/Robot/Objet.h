@@ -7,6 +7,7 @@ private:
 public:
     Objet(int p = 0);
     int getPoids();
+    void setPoids(int p);
 };
 
 #endif /* OBJET_H_ */

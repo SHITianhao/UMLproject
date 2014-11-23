@@ -14,9 +14,10 @@ public:
     ~EtatRobotEnRouteEnCharge();
     static EtatRobotEnRouteEnCharge* instance(Robot* r);
     void avancer(int x, int y);
-    void tourner(char d);
+    void tourner();
     int peser();
-    void rencontrerPlot(Plot* p);
+    void rencontrerPlot(Plot p);
+    std::string getEtatToString();
 };
 
 #endif /* ETATROBOTENROUTEENCHARGE_H_ */
