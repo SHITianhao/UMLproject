@@ -1,4 +1,4 @@
-CXX_FLAGS=-g -ansi -Woverloaded-virtual
+CXX_FLAGS=-g -Wall -std=c++11 
 DIR_H=src/Header
 DIR_S=src/Source
 DIR_ROBOT_H=$(DIR_H)/Robot
@@ -12,13 +12,13 @@ LINK_CXX = g++
 
 #-------------------------------------------------
 
-ALL = robot
+ALL = Robot.exe
 
-robot : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o \
+$(ALL) : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o \
 		$(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o \
 		$(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o \
 		$(DIR_O)/Observable.o $(DIR_O)/Observateur.o
-	$(LINK_CXX) -o robot $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o \
+	$(LINK_CXX) -o $(ALL) $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o \
 		$(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o \
 		$(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o \
 		$(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o \
