@@ -1,82 +1,110 @@
 #include "../../Header/Robot/Robot.h"
-#include "../../Header/Etat/EtatRobotEnRouteAVideFacePlot.h"
+#include "../../Header/Etat/EtatRobotEnRouteAVide.h"
+#include "../../Header/Etat/EtatRobotFige.h"
 
 using namespace std;
 
-EtatRobot* Robot::ETAT_ROBOT = NULL;
-
-EtatRobot* Robot::getEtat() {
-    return ETAT_ROBOT;
+Robot::Robot(Position position, char direction) :
+		_position(position), _direction(direction) {
+	_etatRobot = EtatRobotEnRouteAVide::instance();
 }
 
-Robot::Robot(Position position, char direction) :
-position(position), direction(direction) {
-    if (NULL == ETAT_ROBOT)
-        ETAT_ROBOT = EtatRobotEnRouteAVideFacePlot::instance();
+Robot::~Robot() {
+}
+
+EtatRobot* Robot::getEtat() {
+	return _etatRobot;
 }
 
 void Robot::avancer(int x, int y) {
-    try {
-        ETAT_ROBOT = ETAT_ROBOT->avancer();
-    } catch (EtatRobot::EtatRobot_Exception e) {
-        cerr << "you cannot do this action in this etat" << endl;
-    }
-    position.setX(position.getX() + x);
-    position.setY(position.getY() + y);
+	try {
+		_etatRobot = _etatRobot->avancer();
+	} catch (exception& e) {
+		cerr << e.what();
+	}
+	_position.setX(x);
+	_position.setY(y);
 }
 
 void Robot::tourner() {
-    ETAT_ROBOT->afficher();
-    ETAT_ROBOT = ETAT_ROBOT->tourner();
-    ETAT_ROBOT->afficher();
-    switch (direction) {
-        case 'N':
-            direction = 'E';
-            break;
-        case 'E':
-            direction = 'S';
-            break;
-        case 'S':
-            direction = 'O';
-            break;
-        case 'O':
-            direction = 'N';
-            break;
-    }
+	try {
+		_etatRobot = _etatRobot->tourner();
+	} catch (exception& e) {
+		cerr << e.what();
+	}
+	switch (_direction) {
+	case 'N':
+		_direction = 'E';
+		break;
+	case 'E':
+		_direction = 'S';
+		break;
+	case 'S':
+		_direction = 'O';
+		break;
+	case 'O':
+		_direction = 'N';
+		break;
+	}
 }
 
 void Robot::saisir(Objet o) {
-    if (ETAT_ROBOT->saisir() != NULL) {
-        objet = o;
-    }
+	try {
+		_etatRobot = _etatRobot->saisir();
+		_objet = o;
+	} catch (exception& e) {
+		cerr << e.what();
+	}
 }
 
 void Robot::poser() {
-
+	try {
+		_etatRobot = _etatRobot->poser();
+		_objet = 0;
+	} catch (exception& e) {
+		cerr << e.what();
+	}
 }
 
 int Robot::peser() {
-    ETAT_ROBOT = ETAT_ROBOT->peser();
-    return objet.getPoids();
+	try {
+		_etatRobot = _etatRobot->peser();
+		return _objet.getPoids();
+	} catch (exception& e) {
+		cerr << e.what();
+		return -1;
+	}
 }
 
 void Robot::rencontrerPlot(Plot p) {
-    ETAT_ROBOT = ETAT_ROBOT->rencontrerPlot();
+	_etatRobot = _etatRobot->rencontrerPlot();
+	_plot = p;
 }
 
 int Robot::evaluerPlot() {
-    return 0;
+	return _plot.getHauteur();
 }
 
 void Robot::figer() {
-
+	try {
+		_etatRobot = _etatRobot->figer(this);
+	} catch (exception& e) {
+		cerr << e.what();
+	}
 }
 
 void Robot::repartir() {
-
+	try {
+		_etatRobot = _etatRobot->repartir(this);
+	} catch (exception& e) {
+		cerr << e.what();
+	}
 }
 
 void Robot::affichier() {
-    cout << "x:" << position.getX() << endl;
-    cout << "y:" << position.getY() << endl;
+	_etatRobot->afficher();
+	cout << "x:" << _position.getX() << endl;
+	cout << "y:" << _position.getY() << endl;
+	cout << "direction:" << _direction << endl;
+	cout << "/****END****/" << endl;
 }

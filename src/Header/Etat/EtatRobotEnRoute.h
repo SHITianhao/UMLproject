@@ -7,7 +7,7 @@ class EtatRobotEnRoute : public EtatRobot {
 public:
     EtatRobotEnRoute();
     ~EtatRobotEnRoute();
-    EtatRobot* figer();
+    EtatRobot* figer(Robot* robot);
     void afficher();
 };
 

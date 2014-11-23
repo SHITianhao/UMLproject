@@ -28,15 +28,19 @@ EtatRobot* EtatRobot::evaluerPlot() {
     throw EtatRobot::EtatRobot_Exception();
 }
 
-EtatRobot* EtatRobot::figer() {
+EtatRobot* EtatRobot::figer(Robot* robot) {
     throw EtatRobot::EtatRobot_Exception();
 }
 
-EtatRobot* EtatRobot::repartir() {
+EtatRobot* EtatRobot::repartir(Robot* robot) {
     throw EtatRobot::EtatRobot_Exception();
 }
 
 void EtatRobot::afficher() {
-    cout << "this is etat robot" << endl;
+    cout << "Vous êtes dans état robot." << endl;
+}
+
+const char* EtatRobot::EtatRobot_Exception::what()  const throw(){
+	return "vous ne pouvez pas effectuer cette action dans l'état actuel.\n";
 }
 

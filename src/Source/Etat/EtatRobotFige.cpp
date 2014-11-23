@@ -3,16 +3,28 @@
 
 EtatRobotFige* EtatRobotFige::ETAT_ROBOT_FIGE = NULL;
 
-EtatRobotFige* EtatRobotFige::instance() {
-    if (ETAT_ROBOT_FIGE == NULL)
-        ETAT_ROBOT_FIGE = new EtatRobotFige();
-    return ETAT_ROBOT_FIGE;
+EtatRobotFige::EtatRobotFige() {
 }
 
-EtatRobot* EtatRobotFige::repartir() {
-    return Robot::getEtat();
+EtatRobotFige::~EtatRobotFige() {
+}
+
+EtatRobotFige* EtatRobotFige::instance() {
+	if (ETAT_ROBOT_FIGE == NULL)
+		ETAT_ROBOT_FIGE = new EtatRobotFige();
+	return ETAT_ROBOT_FIGE;
+}
+
+EtatRobot* EtatRobotFige::repartir(Robot* robot) {
+	EtatRobot* result = _figeRobots[robot];
+	_figeRobots.erase(robot);
+	return result;
 }
 
 void EtatRobotFige::afficher() {
-    cout << "this is etat robot fige" << endl;
+	cout << "Vous êtes dans état robot fige." << endl;
+}
+
+void EtatRobotFige::enregistrerRobotFige(Robot* robot) {
+	_figeRobots[robot] = robot->getEtat();
 }
