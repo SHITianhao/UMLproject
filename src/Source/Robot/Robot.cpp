@@ -11,47 +11,47 @@ position(pos), objet(o), plot(pl), direction(d) {
 
 void Robot::avancer(int x, int y) {
     etat->avancer(x, y);
-    notifierObservateurs();
+    maj();
 }
 
 void Robot::tourner() {
     etat->tourner();
-    notifierObservateurs();
+    maj();
 }
 
 void Robot::saisir(Objet o) {
     etat->saisir(o);
-    notifierObservateurs();
+    maj();
 }
 
 void Robot::poser() {
     etat->poser();
-    notifierObservateurs();
+    maj();
 }
 
 int Robot::peser() {
-    notifierObservateurs();
+    maj();
     return etat->peser();
 }
 
 void Robot::rencontrerPlot(Plot p) {
     etat->rencontrerPlot(p);
-    notifierObservateurs();
+    maj();
 }
 
 int Robot::evaluerPlot() {
-    notifierObservateurs();
+    maj();
     return etat->evaluerPlot();
 }
 
 void Robot::figer() {
     etat->figer();
-    notifierObservateurs();
+    maj();
 }
 
 void Robot::repartir() {
     etat->repartir();
-    notifierObservateurs();
+    maj();
 }
 
 /**

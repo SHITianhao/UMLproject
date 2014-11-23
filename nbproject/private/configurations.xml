@@ -9,7 +9,6 @@
           <df name="Affichage">
             <in>Observable.h</in>
             <in>Observateur.h</in>
-            <in>ObservateurConcret.h</in>
           </df>
           <df name="Etat">
             <in>EtatRobot.h</in>
@@ -31,7 +30,6 @@
           <df name="Affichage">
             <in>Observable.cpp</in>
             <in>Observateur.cpp</in>
-            <in>ObservateurConcret.cpp</in>
           </df>
           <df name="Etat">
             <in>EtatRobot.cpp</in>

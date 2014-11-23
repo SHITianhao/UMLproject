@@ -1,18 +1,22 @@
-#ifndef OBSERVATEUR_H
-#define	OBSERVATEUR_H
+#ifndef OBSERVATEURCONCRET_H
+#define	OBSERVATEURCONCRET_H
 
 #include "Observable.h"
 
+using namespace std;
+
 class Observable;
 
-class Observateur
-{
-    public:
-        Observateur();
-        virtual ~Observateur();
-        virtual void afficher(Observable* o) = 0;
+class Observateur {
+private:
+    int cpt;
+    
+public:
+    Observateur();
+    virtual ~Observateur();
+    void afficher(Observable* o);
+    void afficherException(Observable* o, std::string message);
 };
 
-
-#endif	/* OBSERVATEUR_H */
+#endif	/* OBSERVATEURCONCRET_H */
 

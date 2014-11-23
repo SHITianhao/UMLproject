@@ -1,6 +1,7 @@
 #ifndef ELEMENTREPRESENTABLE_H
 #define	ELEMENTREPRESENTABLE_H
 
+#include <iostream>
 #include <vector>
 
 #include "Observateur.h"
@@ -13,7 +14,8 @@ class Observable
         std::vector<Observateur *> observateurs;
 
     protected:
-        void notifierObservateurs();
+        void maj();
+        void majException(std::string message);
 
     public:
         Observable();

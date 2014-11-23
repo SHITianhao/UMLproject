@@ -1,12 +1,13 @@
 #include "../Header/Robot/Robot.h"
-#include "../Header/Affichage/ObservateurConcret.h"
+#include "../Header/Affichage/Observateur.h"
 
 int main() {
     Robot robot;
-    ObservateurConcret observateur;
+    Observateur observateur;
     Plot p = Plot(10);
     Objet o = Objet(20);
     robot.attacher(&observateur);
+    robot.getEtat()->attacher(&observateur);
     
     robot.avancer(10, 10);      // Commande 1
     robot.tourner();            // Commande 2
@@ -20,5 +21,6 @@ int main() {
     robot.avancer(0, 0);        // Commande 10
     robot.tourner();            // Commande 11
     robot.tourner();            // Commande 12
+    robot.poser();
     return 0;
 }

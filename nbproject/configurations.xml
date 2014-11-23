@@ -7,7 +7,6 @@
           <df name="Affichage">
             <in>Observable.cpp</in>
             <in>Observateur.cpp</in>
-            <in>ObservateurConcret.cpp</in>
           </df>
           <df name="Etat">
             <in>EtatRobot.cpp</in>
@@ -73,13 +72,6 @@
         </ccTool>
       </item>
       <item path="src/Source/Affichage/Observateur.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-        <ccTool flags="0">
-        </ccTool>
-      </item>
-      <item path="src/Source/Affichage/ObservateurConcret.cpp"
             ex="false"
             tool="1"
             flavor2="0">

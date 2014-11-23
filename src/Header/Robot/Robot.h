@@ -23,6 +23,7 @@ private:
 
 public:
     Robot(Position pos = Position(0, 0), Objet o = Objet(-1), Plot pl = Plot(-1), char d = 'E');
+    class Commande_Impossible : public std::exception {};
     void avancer(int x, int y);
     void tourner();
     void saisir(Objet o);
