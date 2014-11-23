@@ -1,18 +1,19 @@
 #include "../../Header/Etat/EtatRobotFige.h"
 #include "../../Header/Robot/Robot.h"
 
-EtatRobotFige* EtatRobotFige::ETAT_ROBOT_FIGE = NULL;
+EtatRobotFige::EtatRobotFige(Robot* r) : EtatRobot(r) {
+}
 
-EtatRobotFige* EtatRobotFige::instance() {
-    if (ETAT_ROBOT_FIGE == NULL)
-        ETAT_ROBOT_FIGE = new EtatRobotFige();
-    return ETAT_ROBOT_FIGE;
+EtatRobotFige::~EtatRobotFige() {
+}
+
+EtatRobotFige* EtatRobotFige::instance(Robot* r) {
+    if (thisEtat == NULL)
+        thisEtat = new EtatRobotFige(r);
+    return thisEtat;
 }
 
 EtatRobot* EtatRobotFige::repartir() {
-    return Robot::getEtat();
+    return robot->getEtat();
 }
 
-void EtatRobotFige::afficher() {
-    cout << "this is etat robot fige" << endl;
-}

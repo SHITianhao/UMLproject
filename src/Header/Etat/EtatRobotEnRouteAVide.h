@@ -1,26 +1,21 @@
-/*
- * EtatRobotEnRouteAVide.h
- *
- *  Created on: Nov 7, 2014
- *      Author: sth
- */
 #ifndef ETATROBOTENROUTEAVIDE_H_
 #define ETATROBOTENROUTEAVIDE_H_
 
 #include "EtatRobotEnRoute.h"
 
-class EtatRobotEnRouteAVide: public EtatRobotEnRoute {
+class EtatRobotEnRouteAVide : public EtatRobotEnRoute {
 private:
-	static EtatRobotEnRouteAVide* ETAT_ROBOT_EN_ROUTE_AVIDE;
+    EtatRobotEnRouteAVide* thisEtat;
+
 protected:
-	EtatRobotEnRouteAVide() {}
+    EtatRobotEnRouteAVide(Robot* r);
+
 public:
-	~EtatRobotEnRouteAVide(){}
-	static EtatRobotEnRouteAVide* instance();
-	EtatRobot* avancer();
-	EtatRobot* tourner();
-	EtatRobot* rencontrerPlot();
-	void afficher();
+    ~EtatRobotEnRouteAVide();
+    EtatRobotEnRouteAVide* instance(Robot* r);
+    void avancer(int x, int y);
+    void tourner(char d);
+    void rencontrerPlot(Plot* p);
 };
 
 #endif /* ETATROBOTENROUTEAVIDE_H_ */

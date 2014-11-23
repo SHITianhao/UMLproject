@@ -5,18 +5,13 @@
 
 class EtatRobotFige : public EtatRobot {
 private:
-    static EtatRobotFige* ETAT_ROBOT_FIGE;
+    EtatRobotFige* thisEtat;
 protected:
-
-    EtatRobotFige() {
-    }
+    EtatRobotFige(Robot* r);
 public:
-
-    ~EtatRobotFige() {
-    }
-    static EtatRobotFige* instance();
+    ~EtatRobotFige();
+    EtatRobotFige* instance(Robot* r);
     EtatRobot* repartir();
-    void afficher();
 };
 
 #endif /* ETATROBOTFIGE_H_ */

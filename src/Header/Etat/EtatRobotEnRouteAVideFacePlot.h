@@ -5,21 +5,15 @@
 
 class EtatRobotEnRouteAVideFacePlot : public EtatRobotEnRoute {
 private:
-    static EtatRobotEnRouteAVideFacePlot* ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+    EtatRobotEnRouteAVideFacePlot* thisEtat;
 protected:
-
-    EtatRobotEnRouteAVideFacePlot() {
-    }
+    EtatRobotEnRouteAVideFacePlot(Robot* r);
 public:
-
-    ~EtatRobotEnRouteAVideFacePlot() {
-    }
-    static EtatRobotEnRouteAVideFacePlot* instance();
-    EtatRobot* evaluerPlot();
-    EtatRobot* tourner();
-    EtatRobot* saisir();
-    void afficher();
-
+    ~EtatRobotEnRouteAVideFacePlot();
+    EtatRobotEnRouteAVideFacePlot* instance(Robot* r);
+    int evaluerPlot();
+    void tourner(char d);
+    void saisir(Objet* o);
 };
 
 #endif /* ETATROBOTENROUTEAVIDEFACEPLOT_H_ */

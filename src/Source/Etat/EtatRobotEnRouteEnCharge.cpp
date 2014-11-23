@@ -1,30 +1,29 @@
 #include "../../Header/Etat/EtatRobotEnRouteEnChargeFacePlot.h"
 #include "../../Header/Etat/EtatRobotEnRouteEnCharge.h"
 
-EtatRobotEnRouteEnCharge* EtatRobotEnRouteEnCharge::ETAT_ROBOT_EN_ROUTE_EN_CHARGE = NULL;
-
-EtatRobotEnRouteEnCharge* EtatRobotEnRouteEnCharge::instance() {
-    if (ETAT_ROBOT_EN_ROUTE_EN_CHARGE == NULL)
-        ETAT_ROBOT_EN_ROUTE_EN_CHARGE = new EtatRobotEnRouteEnCharge();
-    return ETAT_ROBOT_EN_ROUTE_EN_CHARGE;
+EtatRobotEnRouteEnCharge::EtatRobotEnRouteEnCharge(Robot* r) : EtatRobotEnRoute(r) {
 }
 
-EtatRobot* EtatRobotEnRouteEnCharge::avancer() {
-    return EtatRobotEnRouteEnCharge::instance();
+EtatRobotEnRouteEnCharge::~EtatRobotEnRouteEnCharge() {
 }
 
-EtatRobot* EtatRobotEnRouteEnCharge::tourner() {
-    return EtatRobotEnRouteEnCharge::instance();
+EtatRobotEnRouteEnCharge* EtatRobotEnRouteEnCharge::instance(Robot* r) {
+    if (thisEtat == NULL)
+        thisEtat = new EtatRobotEnRouteEnCharge(r);
+    return thisEtat;
 }
 
-EtatRobot* EtatRobotEnRouteEnCharge::peser() {
-    return EtatRobotEnRouteEnCharge::instance();
+void EtatRobotEnRouteEnCharge::avancer(int x, int y) {
+    
 }
 
-EtatRobot* EtatRobotEnRouteEnCharge::rencontrerPlot() {
-    return EtatRobotEnRouteEnChargeFacePlot::instance();
+void EtatRobotEnRouteEnCharge::tourner(char d) {
+    
 }
 
-void EtatRobotEnRouteEnCharge::afficher() {
-    cout << "this is etat robot en route en charge" << endl;
+int EtatRobotEnRouteEnCharge::peser() {
+    
+}
+
+void EtatRobotEnRouteEnCharge::rencontrerPlot(Plot* p) {
 }

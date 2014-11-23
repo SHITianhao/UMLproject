@@ -1,84 +1,60 @@
 #include "../../Header/Robot/Robot.h"
 #include "../../Header/Etat/EtatRobotEnRouteAVide.h"
 
+#include <iostream>
 using namespace std;
 
-EtatRobot* Robot::ETAT_ROBOT = NULL;
-
-EtatRobot* Robot::getEtat() {
-    return ETAT_ROBOT;
-}
-
-Robot::Robot(Position position, char direction) :
-position(position), direction(direction) {
-    if (ETAT_ROBOT == NULL) {
-        ETAT_ROBOT = EtatRobotEnRouteAVide::instance();
-    }
+Robot::Robot(Position p, char d) :
+position(p), direction(d) {
+    etat = EtatRobotEnRouteAVide::instance(this);
 }
 
 void Robot::avancer(int x, int y) {
-    try {
-        ETAT_ROBOT = ETAT_ROBOT->avancer();
-    } catch (EtatRobot::EtatRobot_Exception e) {
-        cerr << "you cannot do this action in this etat" << endl;
-    }
-    position.setX(position.getX() + x);
-    position.setY(position.getY() + y);
+    etat->avancer(x, y);
     notifierObservateurs();
-
 }
 
-void Robot::tourner() {
-    ETAT_ROBOT->afficher();
-    ETAT_ROBOT = ETAT_ROBOT->tourner();
-    ETAT_ROBOT->afficher();
-    switch (direction) {
-        case 'N':
-            direction = 'E';
-            break;
-        case 'E':
-            direction = 'S';
-            break;
-        case 'S':
-            direction = 'O';
-            break;
-        case 'O':
-            direction = 'N';
-            break;
-    }
+void Robot::tourner(char d) {
+    etat->tourner(d);
     notifierObservateurs();
 }
 
 void Robot::saisir(Objet* o) {
-    if (ETAT_ROBOT->saisir() != NULL) {
-        objet = o;
-    }
+    etat->saisir(o);
     notifierObservateurs();
 }
 
 void Robot::poser() {
+    etat->poser();
+    notifierObservateurs();
 }
 
 int Robot::peser() {
-    ETAT_ROBOT = ETAT_ROBOT->peser();
-    return objet->getPoids();
+    return etat->peser();
 }
 
-void Robot::rencontrerPlot() {
-    ETAT_ROBOT = ETAT_ROBOT->rencontrerPlot();
+void Robot::rencontrerPlot(Plot* p) {
+    etat->rencontrerPlot(p);
+    notifierObservateurs();
 }
 
 int Robot::evaluerPlot() {
-    return 0;
+    return etat->evaluerPlot();
 }
 
 void Robot::figer() {
-
+    etat->figer();
+    notifierObservateurs();
 }
 
 void Robot::repartir() {
-
+    etat->repartir();
+    notifierObservateurs();
 }
+
+/**
+ *      GETTERS AND SETTERS 
+ */
 
 Position Robot::getPosition() {
     return position;
@@ -94,4 +70,29 @@ Objet* Robot::getObjet() {
 
 char Robot::getDirection() {
     return direction;
+}
+
+EtatRobot* Robot::getEtat() {
+    return etat;
+}
+
+void Robot::setPosition(int x, int y) {
+    position.setX(x);
+    position.setY(y);
+}
+
+void Robot::setPlot(Plot* p) {
+    plot = p;
+}
+
+void Robot::setObjet(Objet* o) {
+    objet = o;
+}
+
+void Robot::setDirection(char d) {
+    direction = d;
+}
+
+void Robot::setEtat(EtatRobot* e) {
+    etat = e;
 }

@@ -1,16 +1,12 @@
 #include "../../Header/Etat/EtatRobotFige.h"
 #include "../../Header/Etat/EtatRobotEnRoute.h"
 
-EtatRobotEnRoute::EtatRobotEnRoute() {
+EtatRobotEnRoute::EtatRobotEnRoute(Robot* r) : EtatRobot(r) {
 }
 
 EtatRobotEnRoute::~EtatRobotEnRoute() {
 }
 
-EtatRobot* EtatRobotEnRoute::figer() {
-    return EtatRobotFige::instance();
-}
-
-void EtatRobotEnRoute::afficher() {
-    cout << "this is etat robot en route" << endl;
+void EtatRobotEnRoute::figer() {
+    
 }

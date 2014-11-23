@@ -2,28 +2,26 @@
 #include "../../Header/Etat/EtatRobotEnRouteEnChargeFacePlot.h"
 #include "../../Header/Etat/EtatRobotEnRouteAVideFacePlot.h"
 
-EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT = NULL;
-
-EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::instance() {
-    if (ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT == NULL)
-        ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT =
-            new EtatRobotEnRouteAVideFacePlot();
-    return ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+EtatRobotEnRouteAVideFacePlot::EtatRobotEnRouteAVideFacePlot(Robot* r) : EtatRobotEnRoute(r) {
 }
 
-EtatRobot* EtatRobotEnRouteAVideFacePlot::evaluerPlot() {
-    return EtatRobotEnRouteAVideFacePlot::instance();
+EtatRobotEnRouteAVideFacePlot::~EtatRobotEnRouteAVideFacePlot() {
 }
 
-EtatRobot* EtatRobotEnRouteAVideFacePlot::tourner() {
-    return EtatRobotEnRouteAVide::instance();
+EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::instance(Robot* r) {
+    if (thisEtat == NULL) {
+        thisEtat = new EtatRobotEnRouteAVideFacePlot(r);
+    }
+    return thisEtat;
 }
 
-EtatRobot* EtatRobotEnRouteAVideFacePlot::saisir() {
-    return EtatRobotEnRouteEnChargeFacePlot::instance();
+int EtatRobotEnRouteAVideFacePlot::evaluerPlot() {
 }
 
-void EtatRobotEnRouteAVideFacePlot::afficher() {
-    cout << "this is etat robot en route a vide face plot" << endl;
+void EtatRobotEnRouteAVideFacePlot::tourner(char d) {
 }
+
+void EtatRobotEnRouteAVideFacePlot::saisir(Objet* o) {
+}
+
 

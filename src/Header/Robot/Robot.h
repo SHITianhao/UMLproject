@@ -7,7 +7,11 @@
 #include "../Etat/EtatRobot.h"
 #include "../Affichage/Observable.h"
 
+#include <iostream>
+
 using namespace std;
+
+class EtatRobot;
 
 class Robot : public Observable {
 private:
@@ -15,25 +19,31 @@ private:
     Objet* objet;
     Plot* plot;
     char direction;
-    static EtatRobot* ETAT_ROBOT;
+    EtatRobot* etat;
+
 public:
-    Robot(Position position = Position(0, 0), char direction = 'N');
-    static EtatRobot* getEtat();
+    Robot(Position p = Position(0, 0), char d = 'N');
     void avancer(int x, int y);
-    void tourner();
+    void tourner(char d);
     void saisir(Objet* o);
     void poser();
     int peser();
-    void rencontrerPlot();
+    void rencontrerPlot(Plot* p);
     int evaluerPlot();
     void figer();
     void repartir();
-    
+
     Position getPosition();
     Plot* getPlot();
     Objet* getObjet();
     char getDirection();
-    
+    EtatRobot* getEtat();
+
+    void setPosition(int x, int y);
+    void setPlot(Plot* plot);
+    void setObjet(Objet* objet);
+    void setDirection(char direction);
+    void setEtat(EtatRobot* e);
 };
 
-#endif /* ROBOT_H_ */
+#endif

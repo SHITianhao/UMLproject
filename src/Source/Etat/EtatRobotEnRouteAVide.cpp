@@ -1,26 +1,34 @@
 #include "../../Header/Etat/EtatRobotEnRouteAVideFacePlot.h"
 #include "../../Header/Etat/EtatRobotEnRouteAVide.h"
 
-EtatRobotEnRouteAVide* EtatRobotEnRouteAVide::ETAT_ROBOT_EN_ROUTE_AVIDE = NULL;
 
-EtatRobotEnRouteAVide* EtatRobotEnRouteAVide::instance() {
-    if (ETAT_ROBOT_EN_ROUTE_AVIDE == NULL)
-        ETAT_ROBOT_EN_ROUTE_AVIDE = new EtatRobotEnRouteAVide();
-    return ETAT_ROBOT_EN_ROUTE_AVIDE;
+EtatRobotEnRouteAVide::EtatRobotEnRouteAVide(Robot* r) : EtatRobotEnRoute(r) {
 }
 
-EtatRobot* EtatRobotEnRouteAVide::avancer() {
-    return EtatRobotEnRouteAVide::instance();
+EtatRobotEnRouteAVide::~EtatRobotEnRouteAVide() {
 }
 
-EtatRobot* EtatRobotEnRouteAVide::tourner() {
-    return EtatRobotEnRouteAVide::instance();
+EtatRobotEnRouteAVide* EtatRobotEnRouteAVide::instance(Robot* r) {
+    if (thisEtat == NULL)
+        thisEtat = new EtatRobotEnRouteAVide(r);
+    return thisEtat;
 }
 
-EtatRobot* EtatRobotEnRouteAVide::rencontrerPlot() {
-    return EtatRobotEnRouteAVideFacePlot::instance();
+void EtatRobotEnRouteAVide::avancer(int x, int y) {
+    try {
+        robot->setPosition(x, y);
+    } catch (exception e) {
+
+    }
 }
 
-void EtatRobotEnRouteAVide::afficher() {
-    cout << "this is etat robot en route a vide" << endl;
+void EtatRobotEnRouteAVide::tourner(char d) {
+    try {
+        robot->setDirection(d);
+    } catch (exception e) {
+
+    }
+}
+
+void EtatRobotEnRouteAVide::rencontrerPlot(Plot* p) {
 }

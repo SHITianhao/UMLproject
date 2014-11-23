@@ -5,20 +5,15 @@
 
 class EtatRobotEnRouteEnChargeFacePlot : public EtatRobotEnRoute {
 private:
-    static EtatRobotEnRouteEnChargeFacePlot* ETAT_ROBOT_EN_ROUTE_EN_CHARGE_FACE_PLOT;
+    EtatRobotEnRouteEnChargeFacePlot* thisEtat;
 protected:
-
-    EtatRobotEnRouteEnChargeFacePlot() {
-    }
+    EtatRobotEnRouteEnChargeFacePlot(Robot* r);
 public:
-
-    ~EtatRobotEnRouteEnChargeFacePlot() {
-    }
-    static EtatRobotEnRouteEnChargeFacePlot* instance();
-    EtatRobot* poser();
-    EtatRobot* tourner();
-    EtatRobot* peser();
-    void afficher();
+    ~EtatRobotEnRouteEnChargeFacePlot();
+    EtatRobotEnRouteEnChargeFacePlot* instance(Robot* r);
+    void poser();
+    void tourner(char d);
+    int peser();
 };
 
 #endif /* ETATROBOTENROUTEENCHARGEFACEPLOT_H_ */
