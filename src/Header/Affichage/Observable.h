@@ -9,14 +9,14 @@ class Observateur;
 
 class Observable {
 private:
-    Observateur* observateur;
+	Observateur* observateur;
 
 public:
-    Observable();
-    virtual ~Observable();
-    void maj(std::string commande);
-    void majException(std::string commande, std::string message);
-    void abonner(Observateur* obs);
+	Observable();
+	virtual ~Observable();
+	void maj(const std::string commande);
+	void majException(const std::string commande, const std::string message);
+	void abonner(Observateur* obs);
 
 };
 

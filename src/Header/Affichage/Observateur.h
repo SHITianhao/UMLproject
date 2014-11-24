@@ -9,13 +9,14 @@ class Observable;
 
 class Observateur {
 private:
-    int cpt;
+	int cpt;
 
 public:
-    Observateur();
-    virtual ~Observateur();
-    void afficher(Observable* o, std::string commande);
-    void afficherException(Observable* o, std::string commande, std::string message);
+	Observateur();
+	virtual ~Observateur();
+	void afficher(Observable* o, const std::string commande);
+	void afficherException(Observable* o, const std::string commande,
+			const std::string message);
 };
 
 #endif

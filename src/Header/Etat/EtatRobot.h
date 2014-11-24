@@ -15,6 +15,8 @@ protected:
 public:
 
     class Commande_Invalide : public std::exception {
+    public:
+    	virtual const char* what() const throw();
     };
     virtual ~EtatRobot();
     virtual void avancer(int x, int y);

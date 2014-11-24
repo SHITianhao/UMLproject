@@ -42,6 +42,10 @@ void EtatRobot::repartir() {
     throw Commande_Invalide();
 }
 
+const char* EtatRobot::Commande_Invalide::what()  const throw(){
+	return "Commande impossible.\n";
+}
+
 std::string EtatRobot::getEtatToString() { 
     throw Commande_Invalide();
 }
