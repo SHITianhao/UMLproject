@@ -1,55 +1,33 @@
 #include "../../Header/Etat/EtatRobot.h"
 
-EtatRobot::EtatRobot(Robot* r) : robot(r) {
+EtatRobot* EtatRobot::avancer() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-EtatRobot::~EtatRobot() {
+EtatRobot* EtatRobot::tourner() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::avancer(int x, int y) {
-    throw Commande_Invalide();
+EtatRobot* EtatRobot::saisir() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::tourner() {
-    throw Commande_Invalide();
+EtatRobot* EtatRobot::poser() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::saisir(const Objet& o) {
-    throw Commande_Invalide();
+EtatRobot* EtatRobot::peser() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::poser() {
-    throw Commande_Invalide();
+EtatRobot* EtatRobot::rencontrerPlot() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-int EtatRobot::peser() {
-    throw Commande_Invalide();
+EtatRobot* EtatRobot::evaluerPlot() {
+    throw EtatRobot::EtatRobot_Exception();
 }
 
-<<<<<<< HEAD
-void EtatRobot::rencontrerPlot(const Plot& p) {
-    throw Commande_Invalide();
-}
-
-int EtatRobot::evaluerPlot() {
-    throw Commande_Invalide();
-}
-
-void EtatRobot::figer() {
-    throw Commande_Invalide();
-}
-
-void EtatRobot::repartir() {
-    throw Commande_Invalide();
-}
-
-const char* EtatRobot::Commande_Invalide::what()  const throw(){
-	return "Commande impossible.\n";
-}
-
-std::string EtatRobot::getEtatToString() { 
-    throw Commande_Invalide();
-=======
 EtatRobot* EtatRobot::figer(Robot* robot) {
     throw EtatRobot::EtatRobot_Exception();
 }
@@ -64,6 +42,5 @@ void EtatRobot::afficher() {
 
 const char* EtatRobot::EtatRobot_Exception::what()  const throw(){
 	return "vous ne pouvez pas effectuer cette action dans l'état actuel.\n";
->>>>>>> origin/robot
 }
 

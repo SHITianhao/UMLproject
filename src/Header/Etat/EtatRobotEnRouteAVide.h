@@ -1,24 +1,18 @@
-#ifndef ETAT_ROBOT_EN_ROUTE_A_VIDE_H_INCLUDED
-#define ETAT_ROBOT_EN_ROUTE_A_VIDE_H_INCLUDED
+/*
+ * EtatRobotEnRouteAVide.h
+ *
+ *  Created on: Nov 7, 2014
+ *      Author: sth
+ */
+#ifndef ETATROBOTENROUTEAVIDE_H_
+#define ETATROBOTENROUTEAVIDE_H_
 
 #include "EtatRobotEnRoute.h"
 
-class EtatRobotEnRouteAVide : public EtatRobotEnRoute {
+class EtatRobotEnRouteAVide: public EtatRobotEnRoute {
 private:
-    static EtatRobotEnRouteAVide* thisEtat;
-
+	static EtatRobotEnRouteAVide* ETAT_ROBOT_EN_ROUTE_AVIDE;
 protected:
-<<<<<<< HEAD
-    EtatRobotEnRouteAVide(Robot* r);
-
-public:
-    ~EtatRobotEnRouteAVide();
-    static EtatRobotEnRouteAVide* instance(Robot* r);
-    void avancer(int x, int y);
-    void tourner();
-    void rencontrerPlot(const Plot& p);
-    std::string getEtatToString();
-=======
 	EtatRobotEnRouteAVide();
 public:
 	~EtatRobotEnRouteAVide();
@@ -27,7 +21,6 @@ public:
 	EtatRobot* tourner();
 	EtatRobot* rencontrerPlot();
 	void afficher();
->>>>>>> origin/robot
 };
 
-#endif
+#endif /* ETATROBOTENROUTEAVIDE_H_ */

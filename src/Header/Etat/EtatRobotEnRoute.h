@@ -1,20 +1,14 @@
-#ifndef ETAT_ROBOT_EN_ROUTE_H_INCLUDED
-#define ETAT_ROBOT_EN_ROUTE_H_INCLUDED
+#ifndef ETATROBOTENROUTE_H_
+#define ETATROBOTENROUTE_H_
 
 #include "EtatRobot.h"
 
 class EtatRobotEnRoute : public EtatRobot {
-protected:
-    EtatRobotEnRoute(Robot* r);
-
 public:
+    EtatRobotEnRoute();
     ~EtatRobotEnRoute();
-<<<<<<< HEAD
-    void figer();
-=======
     EtatRobot* figer(Robot* robot);
->>>>>>> origin/robot
     void afficher();
 };
 
-#endif
+#endif /* ETATROBOTENROUTE_H_ */
