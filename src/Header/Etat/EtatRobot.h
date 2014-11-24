@@ -1,5 +1,5 @@
-#ifndef ETATROBOT_H_
-#define ETATROBOT_H_
+#ifndef ETAT_ROBOT_H_INCLUDED
+#define ETAT_ROBOT_H_INCLUDED
 
 #include <iostream>
 using namespace std;
@@ -16,7 +16,7 @@ public:
     }
 
     class EtatRobot_Exception : public std::exception {
-    	virtual const char* what() const throw();
+        virtual const char* what() const throw ();
     };
     virtual EtatRobot* avancer();
     virtual EtatRobot* tourner();

@@ -1,5 +1,5 @@
-#ifndef ETATROBOTENROUTE_H_
-#define ETATROBOTENROUTE_H_
+#ifndef ETAT_ROBOT_EN_ROUTE_H_INCLUDED
+#define ETAT_ROBOT_EN_ROUTE_H_INCLUDED
 
 #include "EtatRobot.h"
 

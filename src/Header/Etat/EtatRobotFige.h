@@ -1,24 +1,23 @@
-#ifndef ETATROBOTFIGE_H_
-#define ETATROBOTFIGE_H_
+#ifndef ETAT_ROBOT_FIGE_H_INCLUDED
+#define ETAT_ROBOT_FIGE_H_INCLUDED
+
 #include <map>
 #include "EtatRobot.h"
 
-
-class EtatRobotFige: public EtatRobot {
+class EtatRobotFige : public EtatRobot {
 private:
-
-	static EtatRobotFige* ETAT_ROBOT_FIGE;
+    static EtatRobotFige* ETAT_ROBOT_FIGE;
+    
 protected:
-
-	std::map<Robot*, EtatRobot*> _figeRobots;
-	EtatRobotFige();
+    std::map<Robot*, EtatRobot*> _figeRobots;
+    EtatRobotFige();
+    
 public:
-
-	~EtatRobotFige();
-	static EtatRobotFige* instance();
-	EtatRobot* repartir(Robot* robot);
-	string toString();
-	void enregistrerRobotFige(Robot* robot);
+    ~EtatRobotFige();
+    static EtatRobotFige* instance();
+    EtatRobot* repartir(Robot* robot);
+    string toString();
+    void enregistrerRobotFige(Robot* robot);
 };
 
 #endif

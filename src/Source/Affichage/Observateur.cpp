@@ -33,7 +33,7 @@ void Observateur::afficherException(Observable* o, std::string commande, const c
     cout << "<------------ Commande " << cpt << " ------------>" << "\n";
     cout << "|  Requete : " << commande << "\n";
     cout << "|  Exception : " << message;
-    //cout << "|  RAPPEL -> Etat actuel du robot : " << etat->getEtatToString() << "\n";
+    cout << "|  RAPPEL ->  " << etat->toString() << "\n";
     cout << "<---------- Fin Commande " << cpt << " ---------->" << "\n\n";
     cpt++;
 }

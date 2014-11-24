@@ -1,6 +1,5 @@
 #include "../../Header/Affichage/Observable.h"
 
-
 Observable::Observable() : observateurs() {
 }
 

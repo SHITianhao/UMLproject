@@ -1,5 +1,5 @@
-#ifndef POSITION_H_
-#define POSITION_H_
+#ifndef POSITION_H_INCLUDED
+#define POSITION_H_INCLUDED
 
 class Position {
 private:

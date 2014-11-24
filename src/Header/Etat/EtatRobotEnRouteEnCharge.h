@@ -1,23 +1,23 @@
-#ifndef ETATROBOTENROUTEENCHARGE_H_
-#define ETATROBOTENROUTEENCHARGE_H_
+#ifndef ETAT_ROBOT_EN_ROUTE_EN_CHARGE_H_INCLUDED
+#define ETAT_ROBOT_EN_ROUTE_EN_CHARGE_H_INCLUDED
 
 #include "EtatRobotEnRoute.h"
 
-class EtatRobotEnRouteEnCharge: public EtatRobotEnRoute {
+class EtatRobotEnRouteEnCharge : public EtatRobotEnRoute {
 private:
-	static EtatRobotEnRouteEnCharge* ETAT_ROBOT_EN_ROUTE_EN_CHARGE;
+    static EtatRobotEnRouteEnCharge* ETAT_ROBOT_EN_ROUTE_EN_CHARGE;
+    
 protected:
-
-	EtatRobotEnRouteEnCharge();
+    EtatRobotEnRouteEnCharge();
+    
 public:
-
-	~EtatRobotEnRouteEnCharge();
-	static EtatRobotEnRouteEnCharge* instance();
-	EtatRobot* avancer();
-	EtatRobot* tourner();
-	EtatRobot* peser();
-	EtatRobot* rencontrerPlot();
-	string toString();
+    ~EtatRobotEnRouteEnCharge();
+    static EtatRobotEnRouteEnCharge* instance();
+    EtatRobot* avancer();
+    EtatRobot* tourner();
+    EtatRobot* peser();
+    EtatRobot* rencontrerPlot();
+    string toString();
 };
 
 #endif

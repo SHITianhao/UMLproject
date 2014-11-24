@@ -22,12 +22,12 @@ EtatRobot* Robot::getEtat() {
 void Robot::avancer(int x, int y) {
     try {
         _etatRobot = _etatRobot->avancer();
+        _position.setX(x);
+        _position.setY(y);
         maj("AVANCER");
     } catch (exception& e) {
         majException("AVANCER", e.what());
     }
-    _position.setX(x);
-    _position.setY(y);
 }
 
 void Robot::tourner() {
@@ -124,7 +124,6 @@ void Robot::repartir() {
         majException("REPARTIR", e.what());
     }
 }
-
 
 /**
  *      GETTERS AND SETTERS 

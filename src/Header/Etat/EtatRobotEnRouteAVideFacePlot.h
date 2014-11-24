@@ -1,23 +1,22 @@
-#ifndef ETATROBOTENROUTEAVIDEFACEPLOT_H_
-#define ETATROBOTENROUTEAVIDEFACEPLOT_H_
+#ifndef ETAT_ROBOT_EN_ROUTE_A_VIDE_FACE_PLOT_H_INCLUDED
+#define ETAT_ROBOT_EN_ROUTE_A_VIDE_FACE_PLOT_H_INCLUDED
 
 #include "EtatRobotEnRoute.h"
 
-class EtatRobotEnRouteAVideFacePlot: public EtatRobotEnRoute {
+class EtatRobotEnRouteAVideFacePlot : public EtatRobotEnRoute {
 private:
-	static EtatRobotEnRouteAVideFacePlot* ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+    static EtatRobotEnRouteAVideFacePlot* ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+    
 protected:
-
-	EtatRobotEnRouteAVideFacePlot();
+    EtatRobotEnRouteAVideFacePlot();
+    
 public:
-
-	~EtatRobotEnRouteAVideFacePlot();
-	static EtatRobotEnRouteAVideFacePlot* instance();
-	EtatRobot* evaluerPlot();
-	EtatRobot* tourner();
-	EtatRobot* saisir();
-	string toString();
-
+    ~EtatRobotEnRouteAVideFacePlot();
+    static EtatRobotEnRouteAVideFacePlot* instance();
+    EtatRobot* evaluerPlot();
+    EtatRobot* tourner();
+    EtatRobot* saisir();
+    string toString();
 };
 
 #endif

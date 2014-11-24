@@ -1,5 +1,5 @@
-#ifndef ROBOT_H_
-#define ROBOT_H_
+#ifndef ROBOT_H_INCLUDED
+#define ROBOT_H_INCLUDED
 
 #include "Position.h"
 #include "Plot.h"
@@ -14,6 +14,7 @@ private:
     char _direction;
     EtatRobot* _etatRobot;
     Plot _plot;
+    
 public:
     Robot(Position position = Position(0, 0), char direction = 'N');
     Robot(const Robot& robot);
