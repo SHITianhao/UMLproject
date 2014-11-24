@@ -8,7 +8,10 @@ Robot::Robot(Position position, char direction) :
 		_position(position), _direction(direction) {
 	_etatRobot = EtatRobotEnRouteAVide::instance();
 }
-
+Robot::Robot(const Robot& r) :
+		_position(r._position), _direction(r._direction), _objet(r._objet), _plot(
+				r._plot), _etatRobot(r._etatRobot) {
+}
 Robot::~Robot() {
 }
 
