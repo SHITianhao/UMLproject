@@ -24,30 +24,9 @@ void Robot::avancer(int x, int y) {
 		_etatRobot = _etatRobot->avancer();
 		_position.setX(x);
 		_position.setY(y);
+		maj("AVANCER");
 	} catch (exception& e) {
-		cerr << e.what();
-	}
-}
-
-void Robot::tourner() {
-	try {
-		_etatRobot = _etatRobot->tourner();
-		switch (_direction) {
-		case 'N':
-			_direction = 'E';
-			break;
-		case 'E':
-			_direction = 'S';
-			break;
-		case 'S':
-			_direction = 'O';
-			break;
-		case 'O':
-			_direction = 'N';
-			break;
-		}
-	} catch (exception& e) {
-		cerr << e.what();
+		majException("AVANCER", e.what());
 	}
 }
 
