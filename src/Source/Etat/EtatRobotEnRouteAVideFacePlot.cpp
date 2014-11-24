@@ -3,7 +3,7 @@
 #include "../../Header/Etat/EtatRobotEnRouteAVideFacePlot.h"
 
 EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT =
-		NULL;
+        NULL;
 
 EtatRobotEnRouteAVideFacePlot::EtatRobotEnRouteAVideFacePlot() {
 }
@@ -12,25 +12,26 @@ EtatRobotEnRouteAVideFacePlot::~EtatRobotEnRouteAVideFacePlot() {
 }
 
 EtatRobotEnRouteAVideFacePlot* EtatRobotEnRouteAVideFacePlot::instance() {
-	if (ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT == NULL)
-		ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT =
-				new EtatRobotEnRouteAVideFacePlot();
-	return ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+    if (ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT == NULL)
+        ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT =
+            new EtatRobotEnRouteAVideFacePlot();
+    return ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
 }
 
 EtatRobot* EtatRobotEnRouteAVideFacePlot::evaluerPlot() {
-	return EtatRobotEnRouteAVideFacePlot::instance();
+    return EtatRobotEnRouteAVideFacePlot::instance();
 }
 
 EtatRobot* EtatRobotEnRouteAVideFacePlot::tourner() {
-	return EtatRobotEnRouteAVide::instance();
+    return EtatRobotEnRouteAVide::instance();
 }
 
 EtatRobot* EtatRobotEnRouteAVideFacePlot::saisir() {
-	return EtatRobotEnRouteEnChargeFacePlot::instance();
+    return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
 
 string EtatRobotEnRouteAVideFacePlot::toString() {
-	return "Vous êtes dans état robot en route à vide face plot.\n";;
+    return "Vous êtes dans état robot en route à vide face plot.\n";
+    ;
 }
 
