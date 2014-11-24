@@ -7,7 +7,6 @@ private:
 public:
     Objet(int p = -1);
     int getPoids() const;
-    void setPoids(const int& p);
 };
 
 #endif

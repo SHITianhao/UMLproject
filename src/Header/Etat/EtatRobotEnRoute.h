@@ -10,7 +10,6 @@ protected:
 public:
     ~EtatRobotEnRoute();
     void figer();
-    void afficher();
 };
 
 #endif
