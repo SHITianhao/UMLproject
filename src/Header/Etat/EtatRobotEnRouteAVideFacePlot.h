@@ -16,7 +16,7 @@ public:
 	EtatRobot* evaluerPlot();
 	EtatRobot* tourner();
 	EtatRobot* saisir();
-	string toString();
+	virtual string toString();
 
 };
 

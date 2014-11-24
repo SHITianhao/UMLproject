@@ -17,7 +17,7 @@ public:
 	~EtatRobotFige();
 	static EtatRobotFige* instance();
 	EtatRobot* repartir(Robot* robot);
-	string toString();
+	virtual string toString();
 	void enregistrerRobotFige(Robot* robot);
 };
 

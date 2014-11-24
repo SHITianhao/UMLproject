@@ -17,7 +17,7 @@ public:
 	EtatRobot* tourner();
 	EtatRobot* peser();
 	EtatRobot* rencontrerPlot();
-	string toString();
+	virtual string toString();
 };
 
 #endif
