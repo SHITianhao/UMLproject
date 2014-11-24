@@ -7,16 +7,16 @@
 class EtatRobotFige : public EtatRobot {
 private:
     static EtatRobotFige* ETAT_ROBOT_FIGE;
-    
+
 protected:
     std::map<Robot*, EtatRobot*> _figeRobots;
     EtatRobotFige();
-    
+
 public:
     ~EtatRobotFige();
     static EtatRobotFige* instance();
     EtatRobot* repartir(Robot* robot);
-    string toString();
+    virtual string toString();
     void enregistrerRobotFige(Robot* robot);
 };
 

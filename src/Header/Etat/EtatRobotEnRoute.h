@@ -8,7 +8,7 @@ public:
     EtatRobotEnRoute();
     ~EtatRobotEnRoute();
     EtatRobot* figer(Robot* robot);
-    string toString();
+    virtual string toString();
 };
 
 #endif

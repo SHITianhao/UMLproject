@@ -11,12 +11,12 @@ protected:
     EtatRobotEnRouteEnChargeFacePlot();
     
 public:
-    ~EtatRobotEnRouteEnChargeFacePlot();
-    static EtatRobotEnRouteEnChargeFacePlot* instance();
-    EtatRobot* poser();
-    EtatRobot* tourner();
-    EtatRobot* peser();
-    string toString();
+	~EtatRobotEnRouteEnChargeFacePlot();
+	static EtatRobotEnRouteEnChargeFacePlot* instance();
+	EtatRobot* poser();
+	EtatRobot* tourner();
+	EtatRobot* peser();
+	virtual string toString();
 };
 
 #endif

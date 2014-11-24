@@ -6,10 +6,10 @@
 class EtatRobotEnRouteEnCharge : public EtatRobotEnRoute {
 private:
     static EtatRobotEnRouteEnCharge* ETAT_ROBOT_EN_ROUTE_EN_CHARGE;
-    
+
 protected:
     EtatRobotEnRouteEnCharge();
-    
+
 public:
     ~EtatRobotEnRouteEnCharge();
     static EtatRobotEnRouteEnCharge* instance();
@@ -17,7 +17,7 @@ public:
     EtatRobot* tourner();
     EtatRobot* peser();
     EtatRobot* rencontrerPlot();
-    string toString();
+    virtual string toString();
 };
 
 #endif
