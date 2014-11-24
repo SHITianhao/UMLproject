@@ -10,21 +10,21 @@ EtatRobotFige::~EtatRobotFige() {
 }
 
 EtatRobotFige* EtatRobotFige::instance() {
-	if (ETAT_ROBOT_FIGE == NULL)
-		ETAT_ROBOT_FIGE = new EtatRobotFige();
-	return ETAT_ROBOT_FIGE;
+    if (ETAT_ROBOT_FIGE == NULL)
+        ETAT_ROBOT_FIGE = new EtatRobotFige();
+    return ETAT_ROBOT_FIGE;
 }
 
 EtatRobot* EtatRobotFige::repartir(Robot* robot) {
-	EtatRobot* result = _figeRobots[robot];
-	_figeRobots.erase(robot);
-	return result;
+    EtatRobot* result = _figeRobots[robot];
+    _figeRobots.erase(robot);
+    return result;
 }
 
 string EtatRobotFige::toString() {
-	return "Vous êtes dans état robot figé.\n";
+    return "Vous êtes dans état robot figé.\n";
 }
 
 void EtatRobotFige::enregistrerRobotFige(Robot* robot) {
-	_figeRobots[robot] = robot->getEtat();
+    _figeRobots[robot] = robot->getEtat();
 }

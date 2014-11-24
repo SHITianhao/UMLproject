@@ -8,7 +8,7 @@ EtatRobotEnRoute::~EtatRobotEnRoute() {
 }
 
 EtatRobot* EtatRobotEnRoute::figer(Robot* robot) {
-	EtatRobotFige::instance()->enregistrerRobotFige(robot);
+    EtatRobotFige::instance()->enregistrerRobotFige(robot);
     return EtatRobotFige::instance();
 }
 

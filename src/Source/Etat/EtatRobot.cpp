@@ -40,7 +40,7 @@ string EtatRobot::toString() {
     return "Vous êtes dans état robot.\n";
 }
 
-const char* EtatRobot::EtatRobot_Exception::what()  const throw(){
-	return "vous ne pouvez pas effectuer cette action dans l'état actuel.\n";
+const char* EtatRobot::EtatRobot_Exception::what() const throw () {
+    return "vous ne pouvez pas effectuer cette action dans l'état actuel.\n";
 }
 
