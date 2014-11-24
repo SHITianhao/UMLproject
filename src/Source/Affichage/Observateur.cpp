@@ -30,11 +30,11 @@ void Observateur::afficher(Observable* o, std::string commande) {
 void Observateur::afficherException(Observable* o, std::string commande, const char* message) {
     Robot* robot = (Robot*) o;
     EtatRobot* etat = robot->getEtat();
-    cout << "<------------ Commande " << cpt << " ------------>" << "\n";
+    cout << "\033[31m<------------ Commande " << cpt << " ------------>" << "\n";
     cout << "|  Requete : " << commande << "\n";
     cout << "|  Exception : " << message;
-    cout << "|  RAPPEL ->  " << etat->toString() << "\n";
-    cout << "<---------- Fin Commande " << cpt << " ---------->" << "\n\n";
+    cout << "|  RAPPEL ->  " << etat->toString();
+    cout << "<---------- Fin Commande " << cpt << " ---------->" << "\033[30m\n\n";
     cpt++;
 }
 
