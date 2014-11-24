@@ -2,6 +2,7 @@
 #include "../../Header/Etat/EtatRobotEnRouteEnCharge.h"
 #include "../../Header/Etat/EtatRobotEnRouteEnChargeFacePlot.h"
 
+<<<<<<< HEAD
 EtatRobotEnRouteEnChargeFacePlot* EtatRobotEnRouteEnChargeFacePlot::thisEtat = NULL;
 
 EtatRobotEnRouteEnChargeFacePlot::EtatRobotEnRouteEnChargeFacePlot(Robot* r) : EtatRobotEnRoute(r) {
@@ -45,6 +46,38 @@ void EtatRobotEnRouteEnChargeFacePlot::tourner() {
 
 int EtatRobotEnRouteEnChargeFacePlot::peser() {
     return robot->getObjet().getPoids();
+=======
+EtatRobotEnRouteEnChargeFacePlot* EtatRobotEnRouteEnChargeFacePlot::ETAT_ROBOT_EN_ROUTE_EN_CHARGE_FACE_PLOT =
+NULL;
+
+EtatRobotEnRouteEnChargeFacePlot::EtatRobotEnRouteEnChargeFacePlot() {
+}
+
+EtatRobotEnRouteEnChargeFacePlot::~EtatRobotEnRouteEnChargeFacePlot() {
+}
+
+EtatRobotEnRouteEnChargeFacePlot* EtatRobotEnRouteEnChargeFacePlot::instance() {
+	if (ETAT_ROBOT_EN_ROUTE_EN_CHARGE_FACE_PLOT == NULL)
+		ETAT_ROBOT_EN_ROUTE_EN_CHARGE_FACE_PLOT =
+				new EtatRobotEnRouteEnChargeFacePlot();
+	return ETAT_ROBOT_EN_ROUTE_EN_CHARGE_FACE_PLOT;
+}
+
+EtatRobot* EtatRobotEnRouteEnChargeFacePlot::poser() {
+	return EtatRobotEnRouteAVideFacePlot::instance();
+}
+
+EtatRobot* EtatRobotEnRouteEnChargeFacePlot::tourner() {
+	return EtatRobotEnRouteEnCharge::instance();
+}
+
+EtatRobot* EtatRobotEnRouteEnChargeFacePlot::peser() {
+	return EtatRobotEnRouteEnChargeFacePlot::instance();
+}
+
+void EtatRobotEnRouteEnChargeFacePlot::afficher() {
+	cout << "Vous êtes dans état robot en route en charge face plot." << endl;
+>>>>>>> origin/robot
 }
 
 std::string EtatRobotEnRouteEnChargeFacePlot::getEtatToString() {

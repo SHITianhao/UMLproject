@@ -3,6 +3,7 @@
 
 EtatRobotEnRouteAVide* EtatRobotEnRouteAVide::thisEtat = NULL;
 
+<<<<<<< HEAD
 EtatRobotEnRouteAVide::EtatRobotEnRouteAVide(Robot* r) : EtatRobotEnRoute(r) {
 }
 
@@ -45,4 +46,32 @@ void EtatRobotEnRouteAVide::rencontrerPlot(const Plot& p) {
 
 std::string EtatRobotEnRouteAVide::getEtatToString() {
     return "En route à vide";
+=======
+EtatRobotEnRouteAVide::EtatRobotEnRouteAVide() {
+}
+
+EtatRobotEnRouteAVide::~EtatRobotEnRouteAVide() {
+}
+
+EtatRobotEnRouteAVide* EtatRobotEnRouteAVide::instance() {
+	if (ETAT_ROBOT_EN_ROUTE_AVIDE == NULL)
+		ETAT_ROBOT_EN_ROUTE_AVIDE = new EtatRobotEnRouteAVide();
+	return ETAT_ROBOT_EN_ROUTE_AVIDE;
+}
+
+EtatRobot* EtatRobotEnRouteAVide::avancer() {
+	return EtatRobotEnRouteAVide::instance();
+}
+
+EtatRobot* EtatRobotEnRouteAVide::tourner() {
+	return EtatRobotEnRouteAVide::instance();
+}
+
+EtatRobot* EtatRobotEnRouteAVide::rencontrerPlot() {
+	return EtatRobotEnRouteAVideFacePlot::instance();
+}
+
+void EtatRobotEnRouteAVide::afficher() {
+	cout << "Vous êtes dans état robot en route a vide." << endl;
+>>>>>>> origin/robot
 }

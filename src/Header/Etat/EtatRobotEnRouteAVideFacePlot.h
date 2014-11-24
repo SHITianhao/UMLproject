@@ -3,13 +3,18 @@
 
 #include "EtatRobotEnRoute.h"
 
-class EtatRobotEnRouteAVideFacePlot : public EtatRobotEnRoute {
+class EtatRobotEnRouteAVideFacePlot: public EtatRobotEnRoute {
 private:
+<<<<<<< HEAD
     static EtatRobotEnRouteAVideFacePlot* thisEtat;
 
+=======
+	static EtatRobotEnRouteAVideFacePlot* ETAT_ROBOT_EN_ROUTE_AVIDE_FACE_PLOT;
+>>>>>>> origin/robot
 protected:
     EtatRobotEnRouteAVideFacePlot(Robot* r);
 
+<<<<<<< HEAD
 public:
     ~EtatRobotEnRouteAVideFacePlot();
     static EtatRobotEnRouteAVideFacePlot* instance(Robot* r);
@@ -17,6 +22,18 @@ public:
     void tourner();
     void saisir(const Objet& o);
     std::string getEtatToString();
+=======
+	EtatRobotEnRouteAVideFacePlot();
+public:
+
+	~EtatRobotEnRouteAVideFacePlot();
+	static EtatRobotEnRouteAVideFacePlot* instance();
+	EtatRobot* evaluerPlot();
+	EtatRobot* tourner();
+	EtatRobot* saisir();
+	void afficher();
+
+>>>>>>> origin/robot
 };
 
 #endif

@@ -26,6 +26,7 @@ int EtatRobot::peser() {
     throw Commande_Invalide();
 }
 
+<<<<<<< HEAD
 void EtatRobot::rencontrerPlot(const Plot& p) {
     throw Commande_Invalide();
 }
@@ -48,5 +49,21 @@ const char* EtatRobot::Commande_Invalide::what()  const throw(){
 
 std::string EtatRobot::getEtatToString() { 
     throw Commande_Invalide();
+=======
+EtatRobot* EtatRobot::figer(Robot* robot) {
+    throw EtatRobot::EtatRobot_Exception();
+}
+
+EtatRobot* EtatRobot::repartir(Robot* robot) {
+    throw EtatRobot::EtatRobot_Exception();
+}
+
+void EtatRobot::afficher() {
+    cout << "Vous êtes dans état robot." << endl;
+}
+
+const char* EtatRobot::EtatRobot_Exception::what()  const throw(){
+	return "vous ne pouvez pas effectuer cette action dans l'état actuel.\n";
+>>>>>>> origin/robot
 }
 

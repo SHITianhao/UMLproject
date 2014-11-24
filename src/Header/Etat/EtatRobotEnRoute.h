@@ -9,7 +9,11 @@ protected:
 
 public:
     ~EtatRobotEnRoute();
+<<<<<<< HEAD
     void figer();
+=======
+    EtatRobot* figer(Robot* robot);
+>>>>>>> origin/robot
     void afficher();
 };
 

@@ -1,6 +1,7 @@
 #include "../Header/Robot/Robot.h"
 
 int main() {
+<<<<<<< HEAD
     Robot robot;
     Observateur observateur;
     Plot p = Plot(10);
@@ -30,4 +31,38 @@ int main() {
     robot.figer();              // Commande 21
     
     return 0;
+=======
+	Robot robot(Position(10, 10));
+	Plot p(10);
+
+	robot.affichier();
+
+	robot.tourner();
+	robot.affichier();
+
+	robot.avancer(10, 10);
+	robot.affichier();
+
+	robot.figer();
+	robot.affichier();
+	robot.repartir();
+	robot.affichier();
+
+	robot.rencontrerPlot(p);
+	robot.affichier();
+
+	robot.figer();
+	robot.affichier();
+
+	Robot robot2(Position(0, 0));
+	robot2.figer();
+	robot2.affichier();
+
+	robot.repartir();
+	robot.affichier();
+
+	robot2.repartir();
+	robot2.affichier();
+
+>>>>>>> origin/robot
 }
