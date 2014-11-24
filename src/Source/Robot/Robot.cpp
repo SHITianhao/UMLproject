@@ -3,7 +3,7 @@
 #include "../../Header/Etat/EtatRobotFige.h"
 
 Robot::Robot(Position position, char direction) :
-_position(position), _direction(direction) {
+_position(position), _direction(direction), _objet(), _plot() {
     _etatRobot = EtatRobotEnRouteAVide::instance();
 }
 

@@ -1,4 +1,4 @@
-CXX_FLAGS=-g -std=c++11
+CXX_FLAGS=-g -Wall -std=c++11 -Wno-reorder
 DIR_H=src/Header
 DIR_S=src/Source
 DIR_ROBOT_H=$(DIR_H)/Robot
