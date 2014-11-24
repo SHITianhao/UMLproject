@@ -20,7 +20,7 @@ public:
 	EtatRobot* avancer();
 	EtatRobot* tourner();
 	EtatRobot* rencontrerPlot();
-	void afficher();
+	string toString();
 };
 
-#endif /* ETATROBOTENROUTEAVIDE_H_ */
+#endif

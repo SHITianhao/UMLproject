@@ -30,6 +30,6 @@ EtatRobot* EtatRobotEnRouteEnChargeFacePlot::peser() {
 	return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
 
-void EtatRobotEnRouteEnChargeFacePlot::afficher() {
-	cout << "Vous êtes dans état robot en route en charge face plot." << endl;
+string EtatRobotEnRouteEnChargeFacePlot::toString() {
+	return "Vous êtes dans état robot en route en charge face plot.\n";
 }

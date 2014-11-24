@@ -16,8 +16,8 @@ public:
 	EtatRobot* evaluerPlot();
 	EtatRobot* tourner();
 	EtatRobot* saisir();
-	void afficher();
+	string toString();
 
 };
 
-#endif /* ETATROBOTENROUTEAVIDEFACEPLOT_H_ */
+#endif

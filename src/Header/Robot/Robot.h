@@ -32,4 +32,4 @@ public:
 	void repartir();
 	void affichier();
 };
-#endif /* ROBOT_H_ */
+#endif

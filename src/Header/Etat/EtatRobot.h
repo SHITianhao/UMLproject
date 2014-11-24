@@ -27,7 +27,7 @@ public:
     virtual EtatRobot* evaluerPlot();
     virtual EtatRobot* figer(Robot* robot);
     virtual EtatRobot* repartir(Robot* robot);
-    virtual void afficher();
+    virtual string toString();
 };
 
-#endif /* ETATROBOTENROUTEAVIDE_H_ */
+#endif

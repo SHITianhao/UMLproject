@@ -12,6 +12,6 @@ EtatRobot* EtatRobotEnRoute::figer(Robot* robot) {
     return EtatRobotFige::instance();
 }
 
-void EtatRobotEnRoute::afficher() {
-    cout << "Vous êtes dans état robot en route." << endl;
+string EtatRobotEnRoute::toString() {
+    return "Vous êtes dans état robot en route.\n";
 }

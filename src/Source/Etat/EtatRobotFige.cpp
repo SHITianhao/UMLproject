@@ -21,8 +21,8 @@ EtatRobot* EtatRobotFige::repartir(Robot* robot) {
 	return result;
 }
 
-void EtatRobotFige::afficher() {
-	cout << "Vous êtes dans état robot fige." << endl;
+string EtatRobotFige::toString() {
+	return "Vous êtes dans état robot figé.\n";
 }
 
 void EtatRobotFige::enregistrerRobotFige(Robot* robot) {

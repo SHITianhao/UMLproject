@@ -8,7 +8,7 @@ public:
     EtatRobotEnRoute();
     ~EtatRobotEnRoute();
     EtatRobot* figer(Robot* robot);
-    void afficher();
+    string toString();
 };
 
-#endif /* ETATROBOTENROUTE_H_ */
+#endif

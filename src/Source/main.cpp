@@ -7,36 +7,61 @@ using namespace std;
 #include "../Header/Robot/Robot.h"
 
 int main() {
+	cout << "*********robot 1**********"<<endl;
 	Robot robot(Position(10, 10));
 	Plot p(10);
 
-	robot.affichier();
+	robot.affichier(); // pas objet
 
 	robot.tourner();
-	robot.affichier();
+	robot.affichier(); // etat en route a vide
 
-	robot.avancer(10, 10);
-	robot.affichier();
+	robot.avancer(5, 10);
+	robot.affichier(); // etat en route a vide
 
 	robot.figer();
-	robot.affichier();
+	robot.affichier();//etat fige
 	robot.repartir();
-	robot.affichier();
+	robot.affichier();//etat en route a vide
 
 	robot.rencontrerPlot(p);
-	robot.affichier();
+	robot.affichier();//etat a vide face plot
+
+	robot.evaluerPlot();
+	robot.affichier();//etat a vide face plot
 
 	robot.figer();
-	robot.affichier();
+	robot.affichier();//etat fige
 
+	cout << "*********robot 2**********"<<endl;
 	Robot robot2(Position(0, 0));
+
+	robot2.rencontrerPlot(p);
+	robot2.saisir(Objet(10));
+	robot2.affichier();//etat en charge face plot
+
+	robot2.peser();
+	robot2.affichier();//etat en charge face plot
+
+	robot2.tourner();
+	robot2.affichier();//etat en charge
+
+	robot2.rencontrerPlot(p);
+	robot2.affichier();//etat en charge face plot
+
 	robot2.figer();
-	robot2.affichier();
+	robot2.affichier();//etat fige
 
+	cout << "*********robot 1**********"<<endl;
 	robot.repartir();
-	robot.affichier();
+	robot.affichier();//etat a vide face plot
 
+	cout << "*********robot 2**********"<<endl;
 	robot2.repartir();
-	robot2.affichier();
+	robot2.affichier();//etat en charge face plot
+
+	cout << "*********err**********"<<endl;
+	robot2.avancer(1,1);
+	robot.poser();
 
 }

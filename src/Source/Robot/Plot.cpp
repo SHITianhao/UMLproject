@@ -1,6 +1,6 @@
 #include "../../Header/Robot/Plot.h"
 
-Plot::Plot(int hauteur) : hauteur(hauteur) {
+Plot::Plot(int h) : hauteur(h) {
 }
 
 int Plot::getHauteur() {

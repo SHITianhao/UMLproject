@@ -16,11 +16,9 @@ public:
 
 	~EtatRobotFige();
 	static EtatRobotFige* instance();
-	//void getCurrentRobot(Robot* robot);
 	EtatRobot* repartir(Robot* robot);
-	void afficher();
+	string toString();
 	void enregistrerRobotFige(Robot* robot);
-	//void effacerCurrentRobot();
 };
 
-#endif /* ETATROBOTFIGE_H_ */
+#endif

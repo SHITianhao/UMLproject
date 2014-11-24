@@ -5,8 +5,8 @@ class Objet {
 private:
     int poids;
 public:
-    Objet(int p = 0);
+    Objet(int p = -1);
     int getPoids();
 };
 
-#endif /* OBJET_H_ */
+#endif

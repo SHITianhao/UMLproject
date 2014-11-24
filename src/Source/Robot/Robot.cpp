@@ -77,12 +77,24 @@ int Robot::peser() {
 }
 
 void Robot::rencontrerPlot(Plot p) {
-	_etatRobot = _etatRobot->rencontrerPlot();
-	_plot = p;
+	try {
+		_etatRobot = _etatRobot->rencontrerPlot();
+		_plot = p;
+	} catch (exception& e) {
+		cerr << e.what();
+	}
+
 }
 
 int Robot::evaluerPlot() {
-	return _plot.getHauteur();
+	try {
+		_etatRobot = _etatRobot->evaluerPlot();
+		return _plot.getHauteur();
+	} catch (exception& e) {
+		cerr << e.what();
+		return -1;
+	}
+
 }
 
 void Robot::figer() {
@@ -102,9 +114,10 @@ void Robot::repartir() {
 }
 
 void Robot::affichier() {
-	_etatRobot->afficher();
+	cout << _etatRobot->toString();
 	cout << "x:" << _position.getX() << endl;
 	cout << "y:" << _position.getY() << endl;
 	cout << "direction:" << _direction << endl;
+	cout << "object poids:" << _objet.getPoids() << endl;
 	cout << "/****END****/" << endl;
 }

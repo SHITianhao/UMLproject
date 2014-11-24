@@ -17,7 +17,7 @@ public:
 	EtatRobot* tourner();
 	EtatRobot* peser();
 	EtatRobot* rencontrerPlot();
-	void afficher();
+	string toString();
 };
 
-#endif /* ETATROBOTENROUTEENCHARGE_H_ */
+#endif

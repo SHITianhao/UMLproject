@@ -27,6 +27,6 @@ EtatRobot* EtatRobotEnRouteAVide::rencontrerPlot() {
 	return EtatRobotEnRouteAVideFacePlot::instance();
 }
 
-void EtatRobotEnRouteAVide::afficher() {
-	cout << "Vous êtes dans état robot en route a vide." << endl;
+string EtatRobotEnRouteAVide::toString() {
+	return "Vous êtes dans état robot en route à vide.\n";
 }

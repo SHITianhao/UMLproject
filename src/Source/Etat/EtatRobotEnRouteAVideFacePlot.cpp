@@ -30,7 +30,7 @@ EtatRobot* EtatRobotEnRouteAVideFacePlot::saisir() {
 	return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
 
-void EtatRobotEnRouteAVideFacePlot::afficher() {
-	cout << "Vous êtes dans état robot en route a vide face plot." << endl;
+string EtatRobotEnRouteAVideFacePlot::toString() {
+	return "Vous êtes dans état robot en route à vide face plot.\n";;
 }
 

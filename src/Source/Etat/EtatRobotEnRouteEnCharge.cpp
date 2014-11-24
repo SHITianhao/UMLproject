@@ -32,6 +32,6 @@ EtatRobot* EtatRobotEnRouteEnCharge::rencontrerPlot() {
 	return EtatRobotEnRouteEnChargeFacePlot::instance();
 }
 
-void EtatRobotEnRouteEnCharge::afficher() {
-	cout << "Vous êtes dans état robot en route en charge." << endl;
+string EtatRobotEnRouteEnCharge::toString() {
+	return "Vous êtes dans état robot en route en charge.\n";
 }

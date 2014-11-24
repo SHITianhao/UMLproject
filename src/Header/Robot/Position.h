@@ -13,4 +13,4 @@ public:
     void setY(int y);
 };
 
-#endif /* POSITION_H_ */
+#endif

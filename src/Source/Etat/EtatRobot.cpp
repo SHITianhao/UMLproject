@@ -36,8 +36,8 @@ EtatRobot* EtatRobot::repartir(Robot* robot) {
     throw EtatRobot::EtatRobot_Exception();
 }
 
-void EtatRobot::afficher() {
-    cout << "Vous êtes dans état robot." << endl;
+string EtatRobot::toString() {
+    return "Vous êtes dans état robot.\n";
 }
 
 const char* EtatRobot::EtatRobot_Exception::what()  const throw(){
