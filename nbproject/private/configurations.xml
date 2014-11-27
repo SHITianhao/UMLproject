@@ -10,6 +10,10 @@
             <in>Observable.h</in>
             <in>Observateur.h</in>
           </df>
+          <df name="Commande">
+            <in>Commande.h</in>
+            <in>CommandeAfficher.h</in>
+          </df>
           <df name="Etat">
             <in>EtatRobot.h</in>
             <in>EtatRobotEnRoute.h</in>
@@ -30,6 +34,8 @@
           <df name="Affichage">
             <in>Observable.cpp</in>
             <in>Observateur.cpp</in>
+          </df>
+          <df name="Commande">
           </df>
           <df name="Etat">
             <in>EtatRobot.cpp</in>
