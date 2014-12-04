@@ -1,10 +1,10 @@
-/*
- * CommandeSaisir.cpp
- *
- *  Created on: Nov 27, 2014
- *      Author: sth
- */
+#include "../../Header/Commande/CommandeSaisir.h"
 
+CommandeSaisir::CommandeSaisir(Objet o) {
+	_objet = o;
+}
 
-
+void CommandeSaisir::action() {
+	_robot->saisir(_objet);
+}
 

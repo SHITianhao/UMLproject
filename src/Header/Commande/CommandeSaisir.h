@@ -7,11 +7,15 @@
 
 #ifndef UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDESAISIR_H_
 #define UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDESAISIR_H_
-#include "Commande.h"
+#include "CommandeRobot.h"
 
-class CommandeSaisir: public Commande {
+class CommandeSaisir: public CommandeRobot {
+protected:
+	Objet _objet;
 public:
-	virtual void action();
+	CommandeSaisir(Objet o);
+	virtual void executer();
+	virtual void annuler();
 };
 
 #endif /* UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDESAISIR_H_ */

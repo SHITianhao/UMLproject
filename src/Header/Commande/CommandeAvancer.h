@@ -1,11 +1,15 @@
 #ifndef COMMANDE_AFFICHER_H_INCLUDED
 #define	COMMANDE_AFFICHER_H_INCLUDED
 
-#include "Commande.h"
+#include "CommandeRobot.h"
 
-class CommandeAfficher: public Commande {
+class CommandeAvancer: public CommandeRobot {
+protected:
+	Position _position;
 public:
-	virtual void action();
+	CommandeAvancer(Position p);
+	virtual void executer();
+	virtual void annuler();
 };
 
 #endif

@@ -7,14 +7,15 @@
 
 #ifndef UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDERENCONTRERPLOT_H_
 #define UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDERENCONTRERPLOT_H_
-#include "Commande.h"
+#include "CommandeRobot.h"
 
-class CommandeRencontrerPlot: public Commande {
+class CommandeRencontrerPlot: public CommandeRobot {
 private:
 	Plot _plot;
 public:
 	CommandeRencontrerPlot(Plot p);
-	virtual void action();
+	virtual void executer();
+	virtual void annuler();
 };
 
 #endif /* UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDERENCONTRERPLOT_H_ */

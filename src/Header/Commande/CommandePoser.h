@@ -7,12 +7,12 @@
 
 #ifndef UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDEPOSER_H_
 #define UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDEPOSER_H_
-#include "Commande.h"
+#include "CommandeRobot.h"
 
-class CommandePoser: public Commande {
+class CommandePoser: public CommandeRobot {
 public:
-	virtual void action();
-
+	virtual void executer();
+	virtual void annuler();
 };
 
 #endif /* UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDEPOSER_H_ */

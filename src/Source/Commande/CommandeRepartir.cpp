@@ -1,10 +1,6 @@
-/*
- * CommandeRepartir.cpp
- *
- *  Created on: Nov 27, 2014
- *      Author: sth
- */
+#include "../../Header/Commande/CommandeRepartir.h"
 
-
-
+void CommandeRepartir::action() {
+	_robot->repartir();
+}
 

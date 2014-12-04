@@ -1,10 +1,8 @@
-/*
- * CommandePoser.cpp
- *
- *  Created on: Nov 27, 2014
- *      Author: sth
- */
+#include "../../Header/Commande/CommandePoser.h"
 
+void CommandePoser::action() {
+	_robot->poser();
+}
 
 
 
