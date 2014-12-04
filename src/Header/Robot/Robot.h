@@ -21,7 +21,7 @@ public:
     ~Robot();
     EtatRobot* getEtat();
     void avancer(int x, int y);
-    void tourner();
+    void tourner(char d);
     void saisir(Objet o);
     void poser();
     int peser();
@@ -36,10 +36,5 @@ public:
     Objet getObjet() const;
     char getDirection();
 
-    void setPosition(int x, int y);
-    void setPlot(const Plot& p);
-    void setObjet(const Objet& o);
-    void setDirection(char d);
-    void setEtat(EtatRobot* e);
 };
 #endif

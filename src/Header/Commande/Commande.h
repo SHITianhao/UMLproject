@@ -7,7 +7,7 @@ class Robot;
 
 class Commande {
 protected:
-    Robot* robot;
+    Robot* _robot;
     Commande(Robot* r );
     
 public:

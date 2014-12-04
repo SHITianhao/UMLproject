@@ -3,8 +3,9 @@
 
 #include "Commande.h"
 
-class CommandeAfficher : public Commande {
-    
+class CommandeAfficher: public Commande {
+public:
+	virtual void action();
 };
 
 #endif
