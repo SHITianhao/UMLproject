@@ -18,6 +18,7 @@ public:
 	Invocateur();
 	void lire(string s);
 	void executer();
+	vector<int> getParametres();
 private:
 	vector<std::string> _str_list;
 	Commande _commande;

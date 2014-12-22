@@ -6,8 +6,11 @@
 class CommandeAvancer: public CommandeRobot {
 protected:
 	Position _position;
+	static CommandeAvancer _instance;
 public:
-	CommandeAvancer(Position p);
+	CommandeAvancer(string nomCommande);
+	CommandeAvancer(Invocateur* invoc);
+	virtual Commande constructeurVirtuel(Invocateur* invoc);
 	virtual void executer();
 	virtual void annuler();
 };
