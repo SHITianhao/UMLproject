@@ -1,5 +1,6 @@
 #include "../../Header/Affichage/Observateur.h"
 #include "../../Header/Robot/Robot.h"
+#include "../../Header/Commande/Invocateur.h"
 
 using namespace std;
 
@@ -11,31 +12,57 @@ Observateur::~Observateur() {
 }
 
 void Observateur::afficher(Observable* o, std::string commande) {
-    Robot* robot = (Robot *) o;
-    cout << "<------------ Commande " << cpt << " ------------>" << "\n";
-    cout << "|  Requete : " << commande << "\n";
-    cout << "|  Etat : " << robot->getEtat()->toString();
-    cout << "|  Position : " << robot->getPosition().getX() << ", " << robot->getPosition().getY() << "\n";
-    cout << "|  Direction : " << robot->getDirection() << "\n";
-    if (robot->getObjet().getPoids() > 0 and commande == "PESER") {
-        cout << "|  Objet saisi - poids : " << robot->getObjet().getPoids() << "\n";
-    }
-    if (robot->getPlot().getHauteur() > 0 and commande == "EVALUER PLOT") {
-        cout << "|  Plot en face - hauteur : " << robot->getPlot().getHauteur() << "\n";
-    }
-    cout << "<---------- Fin Commande " << cpt << " ---------->" << "\n\n";
+
+    cout << "<------------ Commande " << cpt << " ------------>" << endl;
+    Robot* robot;
+    if ((robot = dynamic_cast<Robot*>(o)) != nullptr)
+    {
+        cout << "|  Requete : " << commande << endl;
+        cout << "|  Etat : " << robot->getEtat()->toString();
+        cout << "|  Position : " << robot->getPosition().getX() << ", " << robot->getPosition().getY() << endl;
+        cout << "|  Direction : " << robot->getDirection() << endl;
+        if (robot->getObjet().getPoids() > 0 and commande == "PESER") {
+            cout << "|  Objet saisi - poids : " << robot->getObjet().getPoids() << endl;
+        }
+        if (robot->getPlot().getHauteur() > 0 and commande == "EVALUER PLOT") {
+            cout << "|  Plot en face - hauteur : " << robot->getPlot().getHauteur() << endl;
+        }
+    } 
+    cout << "<---------- Fin Commande " << cpt << " ---------->" << endl << endl;
     cpt++;
 }
 
 void Observateur::afficherException(Observable* o, std::string commande, const char* message) {
-    Robot* robot = (Robot*) o;
-    EtatRobot* etat = robot->getEtat();
-    cout << "\033[31m<------------ Commande " << cpt << " ------------>" << "\n";
-    cout << "|  Requete : " << commande << "\n";
-    cout << "|  Exception : " << message;
-    cout << "|  RAPPEL ->  " << etat->toString();
-    cout << "<---------- Fin Commande " << cpt << " ---------->" << "\033[30m\n\n";
+    cout << "<------------ Commande " << cpt << " ------------>" << endl;
+    Robot* robot;
+    if ((robot = dynamic_cast<Robot*>(o)) != nullptr)
+    {
+        EtatRobot* etat = robot->getEtat();
+        cout << "|  Requete : " << commande << endl;
+        cout << "|  Exception : " << message;
+        cout << "|  RAPPEL ->  " << etat->toString();
+    }
+
+    Invocateur* invocateur;
+    if ((invocateur = dynamic_cast<Invocateur*>(o)) != nullptr)
+    {
+        cout << "|  Requete : " << commande << endl;
+        cout << "|  Exception : " << message;
+        cout << "|  RAPPEL ->  " << invocateur->getRobot()->getEtat()->toString();
+    }
+    cout << "<---------- Fin Commande " << cpt << " ---------->" << endl << endl;
     cpt++;
+}
+
+void Observateur::afficherTypeGuid(std::string message) {
+    cout << "<------------ Type Guid ------------>" << endl;
+    cout << "|  Type votre " << message << " : ";
+}
+
+void Observateur::afficherWelcome() {
+    cout << "<------------ Welcome ------------>" << endl;
+    cout << "|   Bienvenu au monde de robot!   |" << endl;
+    cout << "<------------ Welcome ------------>" << endl << endl;
 }
 
 void Observateur::resetCompteur() {

@@ -1,16 +1,18 @@
-#ifndef COMMANDE_AFFICHER_H_INCLUDED
-#define	COMMANDE_AFFICHER_H_INCLUDED
+#ifndef UMLPROJECT_SRC_HEADER_COMMANDE_AVANCER_H_
+#define	UMLPROJECT_SRC_HEADER_COMMANDE_AVANCER_H_
 
 #include "CommandeRobot.h"
 
+class Position;
+
 class CommandeAvancer: public CommandeRobot {
 protected:
-	Position _position;
+	Position* _position;
 	static CommandeAvancer _instance;
-public:
 	CommandeAvancer(string nomCommande);
+public:
 	CommandeAvancer(Invocateur* invoc);
-	virtual Commande constructeurVirtuel(Invocateur* invoc);
+	virtual Commande* constructeurVirtuel(Invocateur* invoc);
 	virtual void executer();
 	virtual void annuler();
 };

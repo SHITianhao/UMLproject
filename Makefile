@@ -7,6 +7,8 @@ DIR_ETAT_H=$(DIR_H)/Etat
 DIR_ETAT_S=$(DIR_S)/Etat
 DIR_AFF_H=$(DIR_H)/Affichage
 DIR_AFF_S=$(DIR_S)/Affichage
+DIR_CMD_H=$(DIR_H)/Commande
+DIR_CMD_S=$(DIR_S)/Commande
 DIR_O=bin
 LINK_CXX = g++
 
@@ -14,17 +16,25 @@ LINK_CXX = g++
 
 ALL = robot
 
-robot : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o \
-		$(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o \
+robot : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o \
+		$(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o \
 		$(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o \
-		$(DIR_O)/Observable.o $(DIR_O)/Observateur.o
-	$(LINK_CXX) -o robot $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o \
-		$(DIR_O)/Plot.o $(DIR_O)/Objet.o $(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o \
-		$(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o $(DIR_O)/EtatRobotEnRouteEnCharge.o \
-		$(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o \
-		$(DIR_O)/Observable.o $(DIR_O)/Observateur.o 
+		$(DIR_O)/Observable.o $(DIR_O)/Observateur.o \
+		$(DIR_O)/Commande.o $(DIR_O)/CommandeAvancer.o $(DIR_O)/CommandePeser.o $(DIR_O)/CommandePoser.o \
+		$(DIR_O)/CommandeRencontrerPlot.o $(DIR_O)/CommandeRepartir.o $(DIR_O)/CommandeRobot.o $(DIR_O)/CommandeSaisir.o \
+		$(DIR_O)/CommandeEvaluer.o $(DIR_O)/CommandeFiger.o $(DIR_O)/CommandeTourner.o \
+		$(DIR_O)/Invocateur.o
+	$(LINK_CXX) -o robot \
+		$(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o \
+		$(DIR_O)/EtatRobotFige.o $(DIR_O)/EtatRobotEnRoute.o $(DIR_O)/EtatRobotEnRouteEnChargeFacePlot.o \
+		$(DIR_O)/EtatRobotEnRouteEnCharge.o $(DIR_O)/EtatRobotEnRouteAVideFacePlot.o $(DIR_O)/EtatRobotEnRouteAVide.o \
+		$(DIR_O)/Observable.o $(DIR_O)/Observateur.o \
+		$(DIR_O)/Commande.o $(DIR_O)/CommandeAvancer.o $(DIR_O)/CommandePeser.o $(DIR_O)/CommandePoser.o \
+		$(DIR_O)/CommandeRencontrerPlot.o $(DIR_O)/CommandeRepartir.o $(DIR_O)/CommandeRobot.o $(DIR_O)/CommandeSaisir.o \
+		$(DIR_O)/CommandeEvaluer.o $(DIR_O)/CommandeFiger.o $(DIR_O)/CommandeTourner.o \
+		$(DIR_O)/Invocateur.o
 
-$(DIR_O)/main.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ROBOT_H)/Plot.h $(DIR_ROBOT_H)/Objet.h
+$(DIR_O)/main.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ROBOT_H)/Plot.h $(DIR_ROBOT_H)/Objet.h $(DIR_CMD_H)/Invocateur.h $(DIR_CMD_H)/Commande.h 
 	$(LINK_CXX) -o $(DIR_O)/main.o -c $(DIR_S)/main.cpp $(CXX_FLAGS)
 
 $(DIR_O)/Robot.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ETAT_H)/EtatRobot.h $(DIR_ROBOT_H)/Position.h \
@@ -71,6 +81,42 @@ $(DIR_O)/Observable.o : $(DIR_AFF_H)/Observable.h
 
 $(DIR_O)/Observateur.o : $(DIR_AFF_H)/Observateur.h
 	$(LINK_CXX) -o $(DIR_O)/Observateur.o -c $(DIR_AFF_S)/Observateur.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeAvancer.o : $(DIR_CMD_H)/CommandeAvancer.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeAvancer.o -c $(DIR_CMD_S)/CommandeAvancer.cpp $(CXX_FLAGS)
+	
+$(DIR_O)/CommandePeser.o : $(DIR_CMD_H)/CommandePeser.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandePeser.o -c $(DIR_CMD_S)/CommandePeser.cpp $(CXX_FLAGS)
+	
+$(DIR_O)/CommandePoser.o : $(DIR_CMD_H)/CommandePoser.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandePoser.o -c $(DIR_CMD_S)/CommandePoser.cpp $(CXX_FLAGS)
+	
+$(DIR_O)/CommandeRencontrerPlot.o : $(DIR_CMD_H)/CommandeRencontrerPlot.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeRencontrerPlot.o -c $(DIR_CMD_S)/CommandeRencontrerPlot.cpp $(CXX_FLAGS)
+	
+$(DIR_O)/CommandeRepartir.o : $(DIR_CMD_H)/CommandeRepartir.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeRepartir.o -c $(DIR_CMD_S)/CommandeRepartir.cpp $(CXX_FLAGS)
+	
+$(DIR_O)/CommandeSaisir.o : $(DIR_CMD_H)/CommandeSaisir.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeSaisir.o -c $(DIR_CMD_S)/CommandeSaisir.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeEvaluer.o : $(DIR_CMD_H)/CommandeEvaluer.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeEvaluer.o -c $(DIR_CMD_S)/CommandeEvaluer.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeFiger.o : $(DIR_CMD_H)/CommandeFiger.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeFiger.o -c $(DIR_CMD_S)/CommandeFiger.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeTourner.o : $(DIR_CMD_H)/CommandeTourner.h $(DIR_CMD_H)/CommandeRobot.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeTourner.o -c $(DIR_CMD_S)/CommandeTourner.cpp $(CXX_FLAGS)
+	
+$(DIR_O)/Invocateur.o : $(DIR_CMD_H)/Invocateur.h
+	$(LINK_CXX) -o $(DIR_O)/Invocateur.o -c $(DIR_CMD_S)/Invocateur.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeRobot.o : $(DIR_CMD_H)/CommandeRobot.h $(DIR_CMD_H)/Commande.h
+	$(LINK_CXX) -o $(DIR_O)/CommandeRobot.o -c $(DIR_CMD_S)/CommandeRobot.cpp $(CXX_FLAGS)
+
+$(DIR_O)/Commande.o : $(DIR_CMD_H)/Commande.h
+	$(LINK_CXX) -o $(DIR_O)/Commande.o -c $(DIR_CMD_S)/Commande.cpp $(CXX_FLAGS)
 
 clean :
 	-rm -f $(DIR_O)/*.o $(ALL)

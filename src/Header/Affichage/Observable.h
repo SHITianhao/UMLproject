@@ -17,6 +17,8 @@ public:
     Observable();
     virtual ~Observable();
     void maj(std::string commande);
+    void majTypeGuid(std::string message);
+    void majWelcome();
     void majException(std::string commande, const char* message);
     void abonner(Observateur* obs);
     void desabonner(Observateur* obs);

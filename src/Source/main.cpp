@@ -1,14 +1,24 @@
 #include "../Header/Robot/Robot.h"
-
+#include "../Header/Commande/Invocateur.h"
+#include <string>
 int main() {
     Observateur observateur;
     Robot robot(Position(0, 0));
     robot.abonner(&observateur);
-    Plot p = Plot(10);
-    Objet o = Objet(20);
+    //Plot p = Plot(10);
+    //Objet o = Objet(20);
+    while(true){
+        Invocateur inv;
+        inv.abonner(&observateur);
+        inv.readCommandeFromConsole(&robot);
+        
+    }
+    
 
-    cout << "\n/********* Robot 1 *************/\n\n";
 
+    //cout << "\n/********* Robot 1 *************/\n\n";
+
+    /**
     robot.repartir(); // Commande 1
     robot.evaluerPlot(); // Commande 2 : FAIL
     robot.saisir(o); // Commande 3 : FAIL
@@ -30,8 +40,9 @@ int main() {
     robot.poser(); // Commande 19 : FAIL
     robot.peser(); // Commande 20 : FAIL
     robot.figer(); // Commande 21
-
-    cout << "\n\n/********* Robot 2 *************/\n\n";
+	**/
+    //cout << "\n\n/********* Robot 2 *************/\n\n";
+    /**
     observateur.resetCompteur();
 
     Robot robot2;
@@ -42,7 +53,7 @@ int main() {
     robot2.avancer(5, 5);
     robot2.tourner();
     robot2.figer();
-
+	*/
 
     return 0;
 }

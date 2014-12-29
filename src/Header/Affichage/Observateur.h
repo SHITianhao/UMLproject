@@ -13,6 +13,8 @@ public:
     Observateur();
     virtual ~Observateur();
     void afficher(Observable* o, std::string commande);
+    void afficherTypeGuid(std::string message);
+    void afficherWelcome();
     void afficherException(Observable* o, std::string commande, const char* message);
     void resetCompteur();
 };

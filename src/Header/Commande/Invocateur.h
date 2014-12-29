@@ -8,20 +8,25 @@
 #ifndef UMLPROJECT_SRC_HEADER_COMMANDE_INVOCATEUR_H_
 #define UMLPROJECT_SRC_HEADER_COMMANDE_INVOCATEUR_H_
 #include <string>
-#include <vector>
 #include "Commande.h"
+#include "../Affichage/Observable.h"
 
 using namespace std;
 
-class Invocateur {
+class Robot;
+
+class Invocateur : public Observable {
+private:
+	Commande* _commande;
+	Robot* _robot;
+	void executer();
+	void analyse(string commandeName, Robot* r);
 public:
 	Invocateur();
-	void lire(string s);
-	void executer();
-	vector<int> getParametres();
-private:
-	vector<std::string> _str_list;
-	Commande _commande;
+	void readCommandeFromConsole(Robot* r);
+	int readParametreInt();
+	char readParametreChar();
+	Robot* getRobot();
 };
 
 

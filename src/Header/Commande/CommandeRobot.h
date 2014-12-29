@@ -1,22 +1,19 @@
-/*
- * CommandeRobot.h
- *
- *  Created on: Dec 4, 2014
- *      Author: sth
- */
-
 #ifndef UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDEROBOT_H_
 #define UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDEROBOT_H_
 #include "Commande.h"
-#include "../Robot/Robot.h"
 
-class CommandeRobot: public Commande {
+class Robot;
+
+class CommandeRobot : public Commande {
 protected:
 	Robot* _robot;
-	CommandeRobot(Robot*);
+	CommandeRobot(string nomCommand = "UNKNOW");
+	virtual~CommandeRobot();
 public:
-	virtual void executer();
-	virtual void annuler();
+	CommandeRobot(Robot* r = 0);
+	virtual void executer() = 0;
+	virtual void annuler() = 0;
+	virtual Commande* constructeurVirtuel(Invocateur* invocateur) = 0;
 };
 
 

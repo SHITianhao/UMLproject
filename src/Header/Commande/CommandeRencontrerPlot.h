@@ -9,11 +9,16 @@
 #define UMLPROJECT_SRC_HEADER_COMMANDE_COMMANDERENCONTRERPLOT_H_
 #include "CommandeRobot.h"
 
+class Plot;
+
 class CommandeRencontrerPlot: public CommandeRobot {
-private:
-	Plot _plot;
+protected:
+	static CommandeRencontrerPlot _instance;
+	CommandeRencontrerPlot(string nomCommande);
+	Plot* _plot;
 public:
-	CommandeRencontrerPlot(Plot p);
+	CommandeRencontrerPlot(Invocateur* invoc);
+	virtual Commande* constructeurVirtuel(Invocateur* invoc);
 	virtual void executer();
 	virtual void annuler();
 };

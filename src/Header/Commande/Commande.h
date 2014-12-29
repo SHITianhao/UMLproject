@@ -1,25 +1,37 @@
-#ifndef COMMANDE_H_INCLUDED
-#define	COMMANDE_H_INCLUDED
+#ifndef UMLPROJECT_SRC_HEADER_COMMANDE_H_
+#define	UMLPROJECT_SRC_HEADER_COMMANDE_H_
+#include <iostream>
 #include <string>
 #include <list>
+#include <map>
 using namespace std;
 
 class Invocateur;
 
 class Commande {
 private:
+	//static list<Commande*> histoire;
+protected:
 	static map<string,Commande*> COMMANDE_INSCRITS;
-	static list<Commande*> histoire;
 public:
 	class Commande_Exception: public std::exception {
+	public:
 		virtual const char* what() const throw ();
 	};
-	virtual Commande(string nomCommand);
-	virtual	Commande constructeurVirtuel(Invocateur* invocateur);
-	Commande nouvelleCommande(string nomCommande,Invocateur* invocateur);
+	class UnknowCommande_Exception: public Commande_Exception {
+	public:
+		virtual const char* what() const throw ();
+	};
+	class UnvalidCommande_Exception: public Commande_Exception {
+	public:
+		virtual const char* what() const throw ();
+	};
+	Commande(string nomCommand);
+	Commande(){};
+	virtual Commande* constructeurVirtuel(Invocateur* invocateur);
+	Commande* nouvelleCommande(string nomCommande,Invocateur* invocateur);
 	virtual void executer();
 	virtual void annuler();
-	virtual ~Commande();
 };
 
 #endif

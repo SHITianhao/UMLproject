@@ -12,6 +12,17 @@ void Observable::maj(std::string commande) {
     }
 }
 
+void Observable::majTypeGuid(std::string message) {
+    for (unsigned i = 0; i < observateurs.size(); i++) {
+        observateurs.at(i)->afficherTypeGuid(message);
+    }
+}
+void Observable::majWelcome() {
+    for (unsigned i = 0; i < observateurs.size(); i++) {
+        observateurs.at(i)->afficherWelcome();
+    }
+}
+
 void Observable::majException(std::string commande, const char* message) {
     for (unsigned i = 0; i < observateurs.size(); i++) {
         observateurs.at(i)->afficherException(this, commande, message);
