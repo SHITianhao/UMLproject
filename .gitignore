@@ -1,0 +1,5 @@
+bin/
+.project
+build.properties
+META-INF/
+robot
