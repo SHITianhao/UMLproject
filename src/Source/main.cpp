@@ -10,8 +10,8 @@ int main() {
     while(true){
         Invocateur inv;
         inv.abonner(&observateur);
-        inv.readCommandeFromConsole(&robot);
-        
+        string commande = inv.readCommandeFromConsole("Commande", &robot);
+        inv.analyse(commande,&robot);
     }
     
 

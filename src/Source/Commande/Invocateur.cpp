@@ -40,10 +40,10 @@ Robot* Invocateur::getRobot() {
 	return _robot;
 }
 
-void Invocateur::readCommandeFromConsole(Robot* r) {
-	majTypeGuid("commande");
+string Invocateur::readCommandeFromConsole(const string message, Robot* r) {
+	majTypeGuid(message);
 	string nomCommande;
 	cin >> nomCommande ;
 	std::transform(nomCommande.begin(), nomCommande.end(),nomCommande.begin(), ::toupper);
-	analyse(nomCommande,r);
+	return nomCommande;
 }

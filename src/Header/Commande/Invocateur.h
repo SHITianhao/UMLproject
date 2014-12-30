@@ -20,10 +20,10 @@ private:
 	Commande* _commande;
 	Robot* _robot;
 	void executer();
-	void analyse(string commandeName, Robot* r);
 public:
 	Invocateur();
-	void readCommandeFromConsole(Robot* r);
+	void analyse(string commandeName, Robot* r);
+	string readCommandeFromConsole(const string message, Robot* r);
 	int readParametreInt();
 	char readParametreChar();
 	Robot* getRobot();

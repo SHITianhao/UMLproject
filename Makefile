@@ -23,6 +23,7 @@ robot : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.
 		$(DIR_O)/Commande.o $(DIR_O)/CommandeAvancer.o $(DIR_O)/CommandePeser.o $(DIR_O)/CommandePoser.o \
 		$(DIR_O)/CommandeRencontrerPlot.o $(DIR_O)/CommandeRepartir.o $(DIR_O)/CommandeRobot.o $(DIR_O)/CommandeSaisir.o \
 		$(DIR_O)/CommandeEvaluer.o $(DIR_O)/CommandeFiger.o $(DIR_O)/CommandeTourner.o \
+		$(DIR_O)/CommandeMacro.o $(DIR_O)/CommandeDefMacro.o $(DIR_O)/CommandeAppeler.o \
 		$(DIR_O)/Invocateur.o
 	$(LINK_CXX) -o robot \
 		$(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.o $(DIR_O)/Plot.o $(DIR_O)/Objet.o \
@@ -32,6 +33,7 @@ robot : $(DIR_O)/main.o $(DIR_O)/Robot.o $(DIR_O)/EtatRobot.o $(DIR_O)/Position.
 		$(DIR_O)/Commande.o $(DIR_O)/CommandeAvancer.o $(DIR_O)/CommandePeser.o $(DIR_O)/CommandePoser.o \
 		$(DIR_O)/CommandeRencontrerPlot.o $(DIR_O)/CommandeRepartir.o $(DIR_O)/CommandeRobot.o $(DIR_O)/CommandeSaisir.o \
 		$(DIR_O)/CommandeEvaluer.o $(DIR_O)/CommandeFiger.o $(DIR_O)/CommandeTourner.o \
+		$(DIR_O)/CommandeMacro.o $(DIR_O)/CommandeDefMacro.o $(DIR_O)/CommandeAppeler.o \
 		$(DIR_O)/Invocateur.o
 
 $(DIR_O)/main.o : $(DIR_ROBOT_H)/Robot.h $(DIR_ROBOT_H)/Plot.h $(DIR_ROBOT_H)/Objet.h $(DIR_CMD_H)/Invocateur.h $(DIR_CMD_H)/Commande.h 
@@ -108,6 +110,15 @@ $(DIR_O)/CommandeFiger.o : $(DIR_CMD_H)/CommandeFiger.h $(DIR_CMD_H)/CommandeRob
 
 $(DIR_O)/CommandeTourner.o : $(DIR_CMD_H)/CommandeTourner.h $(DIR_CMD_H)/CommandeRobot.h 
 	$(LINK_CXX) -o $(DIR_O)/CommandeTourner.o -c $(DIR_CMD_S)/CommandeTourner.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeDefMacro.o : $(DIR_CMD_H)/CommandeDefMacro.h $(DIR_CMD_H)/CommandeMacro.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeDefMacro.o -c $(DIR_CMD_S)/CommandeDefMacro.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeAppeler.o : $(DIR_CMD_H)/CommandeAppeler.h $(DIR_CMD_H)/CommandeMacro.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeAppeler.o -c $(DIR_CMD_S)/CommandeAppeler.cpp $(CXX_FLAGS)
+
+$(DIR_O)/CommandeMacro.o : $(DIR_CMD_H)/CommandeMacro.h $(DIR_CMD_H)/Commande.h
+	$(LINK_CXX) -o $(DIR_O)/CommandeMacro.o -c $(DIR_CMD_S)/CommandeMacro.cpp $(CXX_FLAGS)
 	
 $(DIR_O)/Invocateur.o : $(DIR_CMD_H)/Invocateur.h
 	$(LINK_CXX) -o $(DIR_O)/Invocateur.o -c $(DIR_CMD_S)/Invocateur.cpp $(CXX_FLAGS)
