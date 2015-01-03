@@ -2,19 +2,23 @@
 #define	UMLPROJECT_SRC_HEADER_COMMANDE_H_
 #include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 #include <map>
 using namespace std;
 
 class Invocateur;
+class EtatRobot;
 
 class Commande {
-private:
-	//static list<Commande*> histoire;
 protected:
+	static vector<Commande*> HISTOIRE;
 	static map<string,Commande*> COMMANDE_INSCRITS;
 public:
 	class Commande_Exception: public std::exception {
+	public:
+		virtual const char* what() const throw ();
+	};
+	class Parametre_Exception: public std::exception {
 	public:
 		virtual const char* what() const throw ();
 	};

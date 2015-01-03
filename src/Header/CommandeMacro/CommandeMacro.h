@@ -1,14 +1,14 @@
-#ifndef UMLPROJECT_SRC_HEADER_COMMANDE_MACRO_H_
-#define	UMLPROJECT_SRC_HEADER_COMMANDE_MACRO_H_
+#ifndef UMLPROJECT_SRC_HEADER_COMMANDEMACRO_MACRO_H_
+#define	UMLPROJECT_SRC_HEADER_COMMANDEMACRO_MACRO_H_
 
-#include "Commande.h"
+#include "../Commande/Commande.h"
 #include <list>
 #include <string>
 
 class CommandeMacro : public Commande{
 protected:
 	Invocateur* _invoc;
-	static list<string> _macros;
+	static list<Commande*> _macros;
 	CommandeMacro(string nomCommande);
 	static string END_MACRO;
 public:

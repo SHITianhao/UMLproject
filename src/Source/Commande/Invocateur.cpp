@@ -1,6 +1,7 @@
 #include "../../Header/Commande/Invocateur.h"
 #include <stdlib.h>
 #include <algorithm>
+#include "../../Header/Commande/Commande.h"
 
 Invocateur::Invocateur() {
 }
@@ -20,21 +21,6 @@ void Invocateur::executer() {
 	_commande->executer();
 }
 
-int Invocateur::readParametreInt() {
-	int p;
-	majTypeGuid("parametre");
-	if(cin >> p)
-		return p;
-	return 0;
-}
-
-char Invocateur::readParametreChar() {
-	char d;
-	majTypeGuid("parametre");
-	if(cin >> d)
-		return d;
-	return '\0';
-}
 
 Robot* Invocateur::getRobot() {
 	return _robot;

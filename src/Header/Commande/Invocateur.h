@@ -24,8 +24,14 @@ public:
 	Invocateur();
 	void analyse(string commandeName, Robot* r);
 	string readCommandeFromConsole(const string message, Robot* r);
-	int readParametreInt();
-	char readParametreChar();
+	template<typename T>
+	T readParametre() {
+		T p;
+		majTypeGuid("parametre");
+		if(cin >> p)
+			return p;
+		throw Commande::Parametre_Exception();
+	}
 	Robot* getRobot();
 };
 

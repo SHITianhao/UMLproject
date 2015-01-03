@@ -9,6 +9,8 @@ DIR_AFF_H=$(DIR_H)/Affichage
 DIR_AFF_S=$(DIR_S)/Affichage
 DIR_CMD_H=$(DIR_H)/Commande
 DIR_CMD_S=$(DIR_S)/Commande
+DIR_CMDM_H=$(DIR_H)/CommandeMacro
+DIR_CMDM_S=$(DIR_S)/CommandeMacro
 DIR_O=bin
 LINK_CXX = g++
 
@@ -111,14 +113,14 @@ $(DIR_O)/CommandeFiger.o : $(DIR_CMD_H)/CommandeFiger.h $(DIR_CMD_H)/CommandeRob
 $(DIR_O)/CommandeTourner.o : $(DIR_CMD_H)/CommandeTourner.h $(DIR_CMD_H)/CommandeRobot.h 
 	$(LINK_CXX) -o $(DIR_O)/CommandeTourner.o -c $(DIR_CMD_S)/CommandeTourner.cpp $(CXX_FLAGS)
 
-$(DIR_O)/CommandeDefMacro.o : $(DIR_CMD_H)/CommandeDefMacro.h $(DIR_CMD_H)/CommandeMacro.h 
-	$(LINK_CXX) -o $(DIR_O)/CommandeDefMacro.o -c $(DIR_CMD_S)/CommandeDefMacro.cpp $(CXX_FLAGS)
+$(DIR_O)/CommandeDefMacro.o : $(DIR_CMDM_H)/CommandeDefMacro.h $(DIR_CMDM_H)/CommandeMacro.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeDefMacro.o -c $(DIR_CMDM_S)/CommandeDefMacro.cpp $(CXX_FLAGS)
 
-$(DIR_O)/CommandeAppeler.o : $(DIR_CMD_H)/CommandeAppeler.h $(DIR_CMD_H)/CommandeMacro.h 
-	$(LINK_CXX) -o $(DIR_O)/CommandeAppeler.o -c $(DIR_CMD_S)/CommandeAppeler.cpp $(CXX_FLAGS)
+$(DIR_O)/CommandeAppeler.o : $(DIR_CMDM_H)/CommandeAppeler.h $(DIR_CMDM_H)/CommandeMacro.h 
+	$(LINK_CXX) -o $(DIR_O)/CommandeAppeler.o -c $(DIR_CMDM_S)/CommandeAppeler.cpp $(CXX_FLAGS)
 
-$(DIR_O)/CommandeMacro.o : $(DIR_CMD_H)/CommandeMacro.h $(DIR_CMD_H)/Commande.h
-	$(LINK_CXX) -o $(DIR_O)/CommandeMacro.o -c $(DIR_CMD_S)/CommandeMacro.cpp $(CXX_FLAGS)
+$(DIR_O)/CommandeMacro.o : $(DIR_CMDM_H)/CommandeMacro.h $(DIR_CMD_H)/Commande.h
+	$(LINK_CXX) -o $(DIR_O)/CommandeMacro.o -c $(DIR_CMDM_S)/CommandeMacro.cpp $(CXX_FLAGS)
 	
 $(DIR_O)/Invocateur.o : $(DIR_CMD_H)/Invocateur.h
 	$(LINK_CXX) -o $(DIR_O)/Invocateur.o -c $(DIR_CMD_S)/Invocateur.cpp $(CXX_FLAGS)

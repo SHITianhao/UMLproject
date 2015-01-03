@@ -17,6 +17,7 @@ Commande* CommandeEvaluer::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandeEvaluer::executer() {
 	_robot->evaluerPlot();
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandeEvaluer::annuler(){

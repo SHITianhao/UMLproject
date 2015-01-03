@@ -17,7 +17,9 @@ Commande* CommandeRepartir::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandeRepartir::executer() {
 	_robot->repartir();
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandeRepartir::annuler(){
+	_robot->figer();
 }

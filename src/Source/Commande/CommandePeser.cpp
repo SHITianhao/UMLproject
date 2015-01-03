@@ -17,6 +17,7 @@ Commande* CommandePeser::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandePeser::executer() {
 	_robot->peser();
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandePeser::annuler() {

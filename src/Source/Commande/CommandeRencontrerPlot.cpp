@@ -10,7 +10,7 @@ CommandeRencontrerPlot::CommandeRencontrerPlot(string nomCommande) : CommandeRob
 }
 
 CommandeRencontrerPlot::CommandeRencontrerPlot(Invocateur* invoc) : CommandeRobot(invoc->getRobot()) {
-	int h = invoc->readParametreInt();
+	int h = invoc->readParametre<int>();
 	_plot = new Plot(h);
 }
 
@@ -20,6 +20,7 @@ Commande* CommandeRencontrerPlot::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandeRencontrerPlot::executer(){
 	_robot->rencontrerPlot(*_plot);
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandeRencontrerPlot::annuler(){

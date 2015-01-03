@@ -17,7 +17,9 @@ Commande* CommandeFiger::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandeFiger::executer() {
 	_robot->figer();
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandeFiger::annuler(){
+	_robot->repartir();
 }

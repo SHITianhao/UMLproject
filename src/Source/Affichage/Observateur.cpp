@@ -34,20 +34,18 @@ void Observateur::afficher(Observable* o, std::string commande) {
 
 void Observateur::afficherException(Observable* o, std::string commande, const char* message) {
     cout << "<------------ Commande " << cpt << " ------------>" << endl;
+    cout << "|  Requete : " << commande << endl;
+    cout << "|  Exception : " << message;
     Robot* robot;
     if ((robot = dynamic_cast<Robot*>(o)) != nullptr)
     {
         EtatRobot* etat = robot->getEtat();
-        cout << "|  Requete : " << commande << endl;
-        cout << "|  Exception : " << message;
         cout << "|  RAPPEL ->  " << etat->toString();
     }
 
     Invocateur* invocateur;
     if ((invocateur = dynamic_cast<Invocateur*>(o)) != nullptr)
     {
-        cout << "|  Requete : " << commande << endl;
-        cout << "|  Exception : " << message;
         cout << "|  RAPPEL ->  " << invocateur->getRobot()->getEtat()->toString();
     }
     cout << "<---------- Fin Commande " << cpt << " ---------->" << endl << endl;

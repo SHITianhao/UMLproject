@@ -17,6 +17,7 @@ Commande* CommandePoser::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandePoser::executer() {
 	_robot->poser();
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandePoser::annuler() {

@@ -9,7 +9,7 @@ CommandeTourner::CommandeTourner(string nomCommande) : CommandeRobot(nomCommande
 }
 
 CommandeTourner::CommandeTourner(Invocateur* invoc) : CommandeRobot(invoc->getRobot()) {
-	_direction = invoc->readParametreChar();
+	_direction = invoc->readParametre<char>();
 }
 
 Commande* CommandeTourner::constructeurVirtuel(Invocateur* invoc) {
@@ -18,7 +18,10 @@ Commande* CommandeTourner::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandeTourner::executer() {
 	_robot->tourner(_direction);
+	_last_direction = _direction;
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandeTourner::annuler(){
+	_robot->tourner(_last_direction);
 }

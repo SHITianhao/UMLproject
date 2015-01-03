@@ -1,4 +1,4 @@
-#include "../../Header/Commande/CommandeDefMacro.h"
+#include "../../Header/CommandeMacro/CommandeDefMacro.h"
 #include "../../Header/Commande/Invocateur.h"
 
 CommandeDefMacro CommandeDefMacro::_instance("DEFMACRO");
@@ -19,11 +19,10 @@ void CommandeDefMacro::executer() {
 	cout << endl << "<------------ Start Macro ------------>" << endl;
 	nomMacro = _invoc->readCommandeFromConsole("Nom De Macro", _invoc->getRobot());
 	Commande::COMMANDE_INSCRITS[nomMacro] = new CommandeMacro(_invoc);
-	CommandeMacro::END_MACRO = false;
 	string macros;
 	macros = _invoc->readCommandeFromConsole("Macro Commande", _invoc->getRobot());
-	while("FINMACRO" != macros ) {
-		_macros.push_back(macros);
+	while(CommandeMacro::END_MACRO.compare(macros) != 0 ) {
+		_macros.push_back(Commande::nouvelleCommande(macros,_invoc));
 		macros = _invoc->readCommandeFromConsole("Macro Commande", _invoc->getRobot());
 	}
 	cout << "<------------ Fin Macro ------------>" << endl << endl;

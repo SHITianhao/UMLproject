@@ -10,7 +10,7 @@ CommandeSaisir::CommandeSaisir(string nomCommande) : CommandeRobot(nomCommande) 
 }
 
 CommandeSaisir::CommandeSaisir(Invocateur* invoc) : CommandeRobot(invoc->getRobot()) {
-	int p = invoc->readParametreInt();
+	int p = invoc->readParametre<int>();
 	_objet = new Objet(p);
 }
 
@@ -20,6 +20,7 @@ Commande* CommandeSaisir::constructeurVirtuel(Invocateur* invoc) {
 
 void CommandeSaisir::executer() {
 	_robot->saisir(*_objet);
+	Commande::HISTOIRE.push_back(this);
 }
 
 void CommandeSaisir::annuler(){

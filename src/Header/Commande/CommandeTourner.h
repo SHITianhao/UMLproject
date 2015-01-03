@@ -7,6 +7,7 @@ protected:
 	static CommandeTourner _instance;
 	CommandeTourner(string nomCommande);
 	char _direction;
+	char _last_direction;
 public:
 	CommandeTourner(Invocateur* invoc);
 	virtual Commande* constructeurVirtuel(Invocateur* invoc);

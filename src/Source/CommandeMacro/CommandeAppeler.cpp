@@ -1,4 +1,4 @@
-#include "../../Header/Commande/CommandeAppeler.h"
+#include "../../Header/CommandeMacro/CommandeAppeler.h"
 #include "../../Header/Commande/Invocateur.h"
 
 CommandeAppeler CommandeAppeler::_instance("APPELER");
@@ -21,9 +21,9 @@ void CommandeAppeler::executer() {
 	{
 		throw Commande::UnvalidCommande_Exception();
 	}
-	cout << endl << "<------------ " << nomMacro << " Macro Executer ------------>" <<endl;
+	cout << endl << "<------------ " << nomMacro << " Macro Executer ------------>" << endl;
 	Commande::COMMANDE_INSCRITS[nomMacro]->executer();
-	cout << endl << "<------------ Fin " << nomMacro << " Macro Executer ------------>" <<endl;
+	cout << "<------------ Fin " << nomMacro << " Macro Executer ------------>" << endl << endl;
 }
 
 void CommandeAppeler::annuler() {

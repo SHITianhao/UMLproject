@@ -2,10 +2,14 @@
 #include "../../Header/Commande/CommandeAvancer.h"
 #include <iostream>
 
+vector<Commande*> Commande::HISTOIRE;
 map<string,Commande*> Commande::COMMANDE_INSCRITS;
 
 const char* Commande::Commande_Exception::what() const throw () {
     return "C'est une commande exception.\n";
+}
+const char* Commande::Parametre_Exception::what() const throw () {
+    return "Ce n'est pas une parametre correspondant!\n";
 }
 
 const char* Commande::UnknowCommande_Exception::what() const throw () {
